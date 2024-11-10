@@ -42,8 +42,8 @@ const Projects = () => {
                 techStack={['HTML', 'CSS', 'JavaScript', 'React', 'Vercel']}
                 image={require('./images/pixil-layer-Layer 1.png')}
                 links={[
-                    { label: <p><FaGithub/> GitHub</p>, url: 'https://github.com/your-repo' },
-                    { label: <p><FaLaptop/> Demo</p>, url: 'https://your-live-demo.com' },
+                    { label: <p><FaGithub/> GitHub</p>, url: 'https://github.com/auan369/my-portfolio/' },
+                    { label: <p><FaLaptop/> Demo</p>, url: 'https://kyloke-portfolio.vercel.app/' },
                 ]}
             />
 
