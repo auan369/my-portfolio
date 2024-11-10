@@ -1,0 +1,57 @@
+/* Basic styling for the Contact section */
+.contact-section {
+    text-align: center;
+    padding: 5vh 10vw;
+    background-color: #f0f4f8;
+    color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.contact-section h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2d2d2d;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+.contact-section a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+    font-size: 3em;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.contact-links a:hover {
+    color: #f5f7fa;
+    background-color: #333;
+}

@@ -1,0 +1,70 @@
+/* Basic styling for the About section */
+.about-section {
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem; /* size of the line between cells */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 5vh 10vw;
+    background-color: #e1e5ea;
+    color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.about-section h3 {
+    grid-column: 1 / span 2;
+    /* grid-template: 2; */
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2d2d2d;
+    text-align: center;
+}
+
+
+.about-subsection {
+    /* max-width: 800px; */
+    width: 100%;
+    margin-right: 30rem;
+    margin-bottom: 2rem;
+    /* padding: 3rem; */
+}
+.about-subsection h4 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    color: #4b4b4b;
+}
+.about-subsection p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+/* Styling for the skills list */
+.about-subsection ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.about-subsection li {
+    background-color: #e6e9ef;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-subsection li:hover {
+    background-color: #d1d7e0;
+    cursor: default;
+    transition: background-color 0.3s;
+}

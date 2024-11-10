@@ -1,0 +1,23 @@
+.projects-section {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vh 10vw;
+    background-color: #f7f8fa;
+    color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.projects-section h3 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2d2d2d;
+}
+
+/* .projects-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+} */
