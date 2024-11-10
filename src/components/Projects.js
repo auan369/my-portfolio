@@ -1,7 +1,7 @@
 import React from 'react';
 import './Projects.css';
 import IndivProject from './IndivProject';
-import { FaGithub, FaLaptop } from 'react-icons/fa';
+import { FaGithub, FaLaptop, FaFile } from 'react-icons/fa';
 
 const Projects = () => {
     return (
@@ -14,7 +14,7 @@ const Projects = () => {
                 title="Tamagotchi-Inspired Pet App"
                 description="Dynamic updates to pet's stats, interactive mini-games, real-time pet state management. Created and deployed both frontend and backend on Vercel, with unique animations and interactions for an engaging user experience."
                 techStack={['React', 'Node.js', 'Express.js','MongoDB', 'RESTful APIs', 'Vercel', 'Postman']}
-                image={require('./images/pixil-layer-Layer 1.png')}
+                image={require('./images/petapp2.png')}
                 links={[
                     { label: <p><FaGithub/> GitHub</p>, url: 'https://github.com/auan369/pet-app-main' },
                     { label: <p><FaLaptop/> Demo</p>, url: 'https://pet-app-frontend-drab.vercel.app/' },
@@ -40,7 +40,7 @@ const Projects = () => {
                 title="Portfolio Website"
                 description="A portfolio website on a single-page design with smooth scrolling navigation, responsive layout, user-friendly interface. Designed on React and deployed on Vercel to create a functional, visually appealing portfolio to showcase my work and experience."
                 techStack={['HTML', 'CSS', 'JavaScript', 'React', 'Vercel']}
-                image={require('./images/pixil-layer-Layer 1.png')}
+                image={require('./images/portfolio.png')}
                 links={[
                     { label: <p><FaGithub/> GitHub</p>, url: 'https://github.com/auan369/my-portfolio/' },
                     { label: <p><FaLaptop/> Demo</p>, url: 'https://kyloke-portfolio.vercel.app/' },
@@ -78,8 +78,8 @@ const Projects = () => {
                 techStack={['C++', 'Python', 'Data Analysis', 'Modeling and Simulation', 'MuJoCo']}
                 image={require('./images/pixil-layer-Layer 1.png')}
                 links={[
-                    { label: <p><FaGithub/> GitHub</p>, url: 'https://github.com/your-repo' },
-                    { label: <p><FaLaptop/> Demo</p>, url: 'https://your-live-demo.com' },
+                    // { label: <p><FaGithub/> GitHub</p>, url: 'https://github.com/your-repo' },
+                    { label: <p><FaFile/> Link</p>, url: 'https://link.springer.com/book/9789819789627' },
                 ]}
             />
     

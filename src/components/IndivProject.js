@@ -5,7 +5,9 @@ const IndivProject = ({ title, description, techStack, image, links }) => {
     return (
         <div className="project">
             <div className="project-image">
-                <img src={image} alt={`${title} screenshot`} />
+                <div className="laptop">
+                    <img src={image} alt={`${title} screenshot`} />
+                </div>
             </div>
             <div className="project-details">
                 <h2 className="project-title">{title}</h2>

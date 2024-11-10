@@ -18,6 +18,7 @@
     flex: 1;
     display: flex;
     max-width: 50%;
+    min-height: 30rem;
     overflow: hidden;
     justify-content: center;
     align-items: center;
@@ -109,4 +110,42 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+  }
+
+  /* The laptop with borders */
+.laptop {
+    /* -webkit-transform-origin: 0 0; */
+    /* transform-origin: 0 0; */
+    /* -webkit-transform: scale(.6) translate(-50%); Scaled down for a better Try-it experience (change to 1 for full scale) */
+    /* transform: scale(.6) translate(-50%); Scaled down for a better Try-it experience (change to 1 for full scale) */
+    /* left: 50%; */
+    position: absolute;
+    width: 30rem;
+    height: 20rem;
+    border: 1rem solid black;
+    border-width: 1rem 1rem 1rem;
+    border-radius: 1rem;
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+  }
+  .laptop:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 4.5rem;
+    bottom: -2.9rem;
+    width: 35rem;
+    height: 2rem;
+    margin: 80px 0 0 -110px;
+    background: black;
+    border-radius: 6px;
+  }
+
+  .laptop img {
+    width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+    /* pixelated */
+    image-rendering: pixelated;
   }
