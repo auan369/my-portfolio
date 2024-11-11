@@ -1,11 +1,11 @@
 import React from 'react';
 import './IndivProject.css';
 
-const IndivProject = ({ title, description, techStack, image, links }) => {
+const IndivProject = ({ title, description, techStack, image, links, device }) => {
     return (
         <div className="project">
             <div className="project-image">
-                <div className="laptop">
+                <div className={device}>
                     <img src={image} alt={`${title} screenshot`} />
                 </div>
             </div>

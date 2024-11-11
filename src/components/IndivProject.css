@@ -149,3 +149,36 @@
     /* pixelated */
     image-rendering: pixelated;
   }
+
+  .phone {
+    position: absolute;
+    width: 15rem;
+    height: 25rem;
+    border: 1rem solid black;
+    border-width: 1rem 1rem 1rem;
+    border-radius: 1rem;
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    /* background-color: #444; */
+  }
+  .phone:before {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 0.4rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 1rem;
+  }
+
+  .phone img {
+    width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+    /* pixelated */
+    image-rendering: pixelated;
+  }
