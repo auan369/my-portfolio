@@ -12,7 +12,7 @@ const Projects = () => {
             {/* <!-- Project 1 -->   */}        
             <IndivProject
                 title="Tamagotchi-Inspired Pet App"
-                description="Dynamic updates to pet's stats, interactive mini-games, real-time pet state management. Created and deployed both frontend and backend on Vercel, with unique animations and interactions for an engaging user experience."
+                description="A web-based Tamagotchi-inspired pet app where users can interact with a digital pet, managing its hunger, happiness, and health through activities like feeding, playing, and cleaning. The app updates pet stats in real-time using a React frontend and a backend API, creating a dynamic, nostalgic experience reminiscent of classic virtual pet games. Featueres include dynamic updates to pet's stats, interactive mini-games, and real-time pet state management. Created and deployed both frontend and backend on Vercel, with unique animations and interactions for an engaging user experience."
                 techStack={['React', 'Node.js', 'Express.js','MongoDB', 'RESTful APIs', 'Vercel', 'Postman']}
                 image={require('./images/petapp2.png')}
                 device={'laptop'}
@@ -27,7 +27,7 @@ const Projects = () => {
             <IndivProject
                 title="WeatherAtYourLocation: Real-Time Weather Application"
                 description="A responsive web app that provides real-time weather information tailored to your location, demonstrating API integration skills and front-end development abilities. Provides real-time weather updates, detailed weather information (temperature, humidity, wind speed), forecast reporting (3-hour forecasts for 5 days), and a User-Friendly Interface. APIs used include IPinfo for location services and OpenWeather for live weather data and forecasting."
-                techStack={['HTML', 'CSS', 'JavaScript', 'OpenWeather API', 'IPinfo API']}
+                techStack={['HTML', 'CSS', 'JavaScript', 'API Integration']}
                 image={require('./images/weather.png')}
                 device={'laptop'}
                 links={[
@@ -72,7 +72,7 @@ const Projects = () => {
                 device={'laptop'}
                 links={[
                     // { label: <p><FaGithub/> GitHub</p>, url: 'https://github.com/your-repo' },
-                    // { label: <p><FaLaptop/> Demo</p>, url: 'https://your-live-demo.com' },
+                    { label: <p><FaFile/> Link</p>, url: 'https://theyoungmaker.com/' },
                 ]}
             />
 
