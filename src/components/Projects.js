@@ -12,7 +12,7 @@ const Projects = () => {
             {/* <!-- Project 1 -->   */}        
             <IndivProject
                 title="Tamagotchi-Inspired Pet App"
-                description="A web-based Tamagotchi-inspired pet app where users can interact with a digital pet, managing its hunger, happiness, and health through activities like feeding, playing, and cleaning. The app updates pet stats in real-time using a React frontend and a backend API, creating a dynamic, nostalgic experience reminiscent of classic virtual pet games. Featueres include dynamic updates to pet's stats, interactive mini-games, and real-time pet state management. Created and deployed both frontend and backend on Vercel, with unique animations and interactions for an engaging user experience."
+                description="A web-based, Tamagotchi-inspired pet app where users care for a digital pet by managing hunger, happiness, and health through activities like feeding, mini-games, and cleaning. Built with a React frontend for real-time updates and a backend API connected to MongoDB to store pet and user data, it offers a nostalgic experience reminiscent of classic virtual pet games. Deployed on Vercel for smooth performance and enhanced user engagement."
                 techStack={['React', 'Node.js', 'Express.js','MongoDB', 'RESTful APIs', 'Vercel', 'Postman']}
                 image={require('./images/petapp2.png')}
                 device={'laptop'}
