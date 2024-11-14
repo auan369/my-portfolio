@@ -8,11 +8,11 @@ const About = () => {
 
                 <h4>Background</h4>
                     <p>
-                        Hello, I'm Kum Yew Loke, a Web Developer passionate about building impactful websites and web applications. With a strong background in Mechanical Engineering (Robotics & Mechatronics, NTU, First-Class Honours), I specialise in creating user-friendly web applications, blending engineering precision with software development and data analytics skills.
+                        Hello, I'm Loki, a Web Developer passionate about building impactful websites and web applications. With a strong background in Mechanical Engineering (Robotics & Mechatronics, NTU, First-Class Honours), I specialise in creating user-friendly web applications, blending engineering precision with software development and data analytics skills.
                     </p>
 
                     <p>
-                        I'm experienced with React, PostgreSQL, MongoDB, and RESTful APIs, and I enjoy tackling new challenges with every project. Outside of work, I love analog photography, and staying active through sports and nature hikes. I'm passionate about parrots (being a parrot owner) and traveling, and always eager to connect with others in tech and innovation!
+                        I'm experienced with React, PostgreSQL, MongoDB, and RESTful APIs, and I enjoy tackling new challenges with every project. Outside of work, I love analog photography, and staying active through sports and nature hikes. I'm passionate about parrots (being a parrot owner) and travelling, and always eager to connect with others in tech and innovation!
                     </p>
                     <p>
                         I'm currently open to new opportunities in software development and data analytics and am eager to connect with others passionate about tech and innovation!

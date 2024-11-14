@@ -12,7 +12,7 @@ const Projects = () => {
             {/* <!-- Project 1 -->   */}        
             <IndivProject
                 title="Tamagotchi-Inspired Pet App"
-                description="A web-based, Tamagotchi-inspired pet app where users care for a digital pet by managing hunger, happiness, and health through activities like feeding, mini-games, and cleaning. Built with a React frontend for real-time updates and a backend API connected to MongoDB to store pet and user data, it offers a nostalgic experience reminiscent of classic virtual pet games. Deployed on Vercel for smooth performance and enhanced user engagement."
+                description="A web-based, Tamagotchi-inspired pet app where users care for a digital pet by managing hunger, happiness, and health bars through activities like feeding, mini-games, and cleaning. It is built with a React frontend for real-time updates and a backend API that is connected to MongoDB to store pet and user data, it offers a nostalgic experience reminiscent of classic virtual pet games. Deployed on Vercel for smooth performance and enhanced user engagement."
                 techStack={['React', 'Node.js', 'Express.js','MongoDB', 'RESTful APIs', 'Vercel', 'Postman']}
                 image={require('./images/petapp2.png')}
                 device={'laptop'}
@@ -26,7 +26,7 @@ const Projects = () => {
             {/* <!-- Project 3 --> */}
             <IndivProject
                 title="WeatherAtYourLocation: Real-Time Weather Application"
-                description="A responsive web app that provides real-time weather information tailored to your location, demonstrating API integration skills and front-end development abilities. Provides real-time weather updates, detailed weather information (temperature, humidity, wind speed), forecast reporting (3-hour forecasts for 5 days), and a User-Friendly Interface. APIs used include IPinfo for location services and OpenWeather for live weather data and forecasting."
+                description="A responsive web app that provides real-time weather information tailored to your location, demonstrating API integration skills and front-end development abilities. Provides real-time weather updates, detailed weather information (temperature, humidity, wind speed), forecast reporting (3-hour forecasts for 5 days), and a User-Friendly Interface. APIs used include IPinfo for location services based on IP address and OpenWeather for live weather data and forecasting."
                 techStack={['HTML', 'CSS', 'JavaScript', 'API Integration']}
                 image={require('./images/weather.png')}
                 device={'laptop'}
@@ -53,7 +53,7 @@ const Projects = () => {
             {/* <!-- Project 2 --> */}
             <IndivProject
                 title="Cluck Food App"
-                description="Cluck 'n' Crave is a mobile application built as the capstone project for the Meta React Native Specialization. Designed to enhance the restaurant experience, Cluck 'n' Crave provides users with an interactive platform for ordering food, managing profiles, and discovering menu options. The app's development involved extensive UI/UX planning, including wireframes and prototypes, user journey mapping, and iterative design improvements."
+                description="Cluck 'n' Crave is a mobile application built as the capstone project for the Meta React Native Specialisation. Designed to enhance the restaurant experience, Cluck 'n' Crave provides users with an interactive platform for ordering food, managing profiles, and discovering menu options. The app's development involved extensive UI/UX planning, including wireframes and prototypes, user journey mapping, and iterative design improvements."
                 techStack={['React Native', "JavaScript", 'RESTful APIs', "SQL", 'Figma']}
                 image={require('./images/CluckFoodHomeScreen.png')}
                 device={'phone'}
@@ -79,7 +79,7 @@ const Projects = () => {
             {/* <!-- Project 6 --> */}
             <IndivProject
                 title="Thesis Publication in the ICSR + BioMed 2024 Conference"
-                description="My thesis, Personalised 3D Human Digital Twin with Soft-Body Feet for Walking Simulation, was published at the ICSR + BioMed 2024 Conference. As part of my Final Year Project with the Rehabilitation Research Institute of Singapore, I enhanced a human-robot interaction simulation, implementing soft-body physics to replicate human tissue and improve Ground Reaction Force accuracy. I used Python APIs, custom C++ scripting, and data visualization, gaining skills in source control, testing, debugging, and team collaboration."
+                description="My thesis, Personalised 3D Human Digital Twin with Soft-Body Feet for Walking Simulation, was published at the ICSR + BioMed 2024 Conference. As part of my Final Year Project with the Rehabilitation Research Institute of Singapore, I enhanced a human-robot interaction simulation, implementing soft-body physics to replicate human tissue and improve Ground Reaction Force accuracy. I used Python APIs, custom C++ scripting, and data visualisation, gaining skills in source control, testing, debugging, and team collaboration."
                 techStack={['C++', 'Python', 'Data Analysis', 'Modeling and Simulation', 'MuJoCo']}
                 image={require('./images/ICSR.png')}
                 device={'laptop'}
