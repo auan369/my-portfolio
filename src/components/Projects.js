@@ -8,6 +8,20 @@ const Projects = () => {
         <section id="projects" className="projects-section">
             <h3>Projects</h3>
             <div className="projects-intro">
+
+            {/* <!-- Project 0 -->   */}        
+            <IndivProject
+                title="Multiplayer Rock Paper Scissors WebSocket Game"
+                description="This is a real-time multiplayer Rock Paper Scissors game that allows players to create or join game rooms, play rounds with others, and receive instant feedback on game outcomes. The application features a dynamic backend powered by WebSockets for seamless real-time communication and a responsive frontend for engaging user interaction. It supports game room management, live updates, and multiplayer functionality."
+                techStack={['React', 'Socket.IO', 'Node.js', 'Express.js','MongoDB', 'dotenv', 'CORS', 'Render']}
+                image={require('./images/demo.gif')}
+                device={'laptop'}
+                links={[
+                    { label: <p><FaGithub/> GitHub</p>, url: 'https://github.com/auan369/rockpaperscissors-frontend' },
+                    { label: <p><FaLaptop/> Demo</p>, url: 'https://rockpaperscissors-frontend.onrender.com/' },
+                ]}
+            />
+
             
             {/* <!-- Project 1 -->   */}        
             <IndivProject
