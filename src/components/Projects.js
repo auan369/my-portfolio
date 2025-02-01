@@ -11,6 +11,19 @@ const Projects = () => {
 
             {/* <!-- Project 0 -->   */}        
             <IndivProject
+                title="Loot-Drop WordPress plugins [Freelance Web Developer]"
+                description="In this project, I developed a custom WordPress plugin with MySQL, AJAX, shortcodes, and admin menus for seamless integration. Key features include drag-and-drop hierarchy management and interactive loot-drop systems. I also designed REST API endpoints for efficient data retrieval and management. A master MongoDB database was also developed and optimised to populate the local MySQL database with updated loot items, with queries optimised and real-time UI implemented to display and edit loot items and their details."
+                techStack={['WordPress', 'PHP','MySQL','MongoDB',  'JavaScript', 'CSS', 'HTML5', 'Node.js', 'Vercel']}
+                image={require('./images/plugin.gif')}
+                device={'laptop'}
+                // links={[
+                //     { label: <p><FaGithub/> GitHub</p>, url: 'https://github.com/auan369/rockpaperscissors-frontend' },
+                //     { label: <p><FaLaptop/> Demo</p>, url: 'https://rockpaperscissors-frontend.onrender.com/' },
+                // ]}
+            />
+
+            {/* <!-- Project 0.1 -->   */}        
+            <IndivProject
                 title="Multiplayer Rock Paper Scissors WebSocket Game"
                 description="This is a real-time multiplayer Rock Paper Scissors game that allows players to create or join game rooms, play rounds with others, and receive instant feedback on game outcomes. The application features a dynamic backend powered by WebSockets for seamless real-time communication and a responsive frontend for engaging user interaction. It supports game room management, live updates, and multiplayer functionality."
                 techStack={['React', 'Socket.IO', 'Node.js', 'Express.js','MongoDB', 'dotenv', 'CORS', 'Render']}
