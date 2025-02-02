@@ -35,7 +35,8 @@
 .about-subsection h4 {
     font-size: 1.8rem;
     font-weight: 500;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
+    margin: 0.5rem 0;
     color: #4b4b4b;
 }
 .about-subsection p {
@@ -50,15 +51,16 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    
 }
 
 .about-subsection li {
     background-color: #e6e9ef;
     border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
     color: #333;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -67,4 +69,16 @@
     background-color: #d1d7e0;
     cursor: default;
     transition: background-color 0.3s;
+}
+
+/* Styling for category headers */
+.about-subsection .category {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 1rem;
 }
