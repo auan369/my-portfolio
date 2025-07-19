@@ -1,94 +1,58 @@
-import React  from  'react';
+// About.js
+import React from 'react';
 import { motion } from 'framer-motion';
 import portfolioData from '../data/portfolioData';
-import './About.css';
+
+// We get both the 'about' text and 'technologies' data
+const { about, technologies } = portfolioData;
+
 const About = () => {
-    return (
-        <motion.section 
-        id="about" className="about-section"
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: false }}
-        transition={{ duration: 1, delay: 0.1 }}
-        >
-            <h3>About Me</h3>
-            <div className="about-subsection">
+  return (
+    <motion.section
+      id="about"
+      // Mobile-first layout: 1 column by default, 2 columns on medium screens (md) and up
+      className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 items-start py-20 px-5 md:px-20 bg-[#e1e5ea] text-[#333] font-sans leading-relaxed"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
+    >
+      {/* Main Title - Spans both columns on larger screens */}
+      <h3 className="text-4xl font-semibold text-center text-[#2d2d2d] mb-4 md:col-span-2">
+        About Me
+      </h3>
 
-                <h4>Background</h4>
-                    <p>
-                        {portfolioData.about.background}
-                    </p>
+      {/* Left Column: Background Info */}
+      <div className="w-full space-y-4">
+        <h4 className="text-2xl font-medium text-[#4b4b4b] border-b-2 border-gray-300 pb-2">Background</h4>
+        <p className="text-lg text-[#555]">{about.background}</p>
+        <p className="text-lg text-[#555]">{about.skills}</p>
+        <p className="text-lg text-[#555]">{about.openToWork}</p>
+      </div>
 
-                    <p>
-                        {portfolioData.about.skills}
-                    </p>
-                    <p>
-                        {portfolioData.about.openToWork}
-                    </p>
-            </div>
-            <div className="about-subsection">   
-                <h4>Technical Skills</h4>
-                <ul>
-                    {/* <!-- Languages --> */}
-                    <li class="category">Languages</li>
-                    <li>JavaScript</li>
-                    <li>Python</li>
-                    <li>PHP</li>
-
-                    {/* <!-- Frontend --> */}
-                    <li class="category">Frontend</li>
-                    <li>React</li>
-                    <li>React Native</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-
-                    {/* <!-- Backend --> */}
-                    <li class="category">Backend</li>
-                    <li>Node.js</li>
-                    <li>Express.js</li>
-
-                    {/* <!-- Databases --> */}
-                    <li class="category">Databases</li>
-                    <li>MongoDB</li>
-                    <li>PostgreSQL</li>
-                    <li>MySQL</li>
-
-                    {/* <!-- DevOps & Deployment --> */}
-                    <li class="category">Tools</li>
-                    <li>GitHub</li>
-                    <li>Vercel</li>
-                    <li>Docker</li>
-                    <li>CI/CD</li>
-
-                    {/* <!-- Data & Analysis --> */}
-                    <li class="category">Other Skills</li>
-                    <li>RESTful APIs</li>
-                    <li>API Integration</li>
-                    <li>UI/UX Design</li>
-                    <li>Data Analysis</li>
-                    <li>Project Management</li>
-                    {/* <li>JavaScript</li>
-                    <li>React</li>
-                    <li>React Native</li>
-                    <li>Node.js</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>PHP</li>
-                    <li>Python</li>
-                    <li>MongoDB</li>
-                    <li>PostgreSQL</li>
-                    <li>MySQL</li>
-                    <li>Express.js</li>
-                    <li>RESTful APIs</li>
-                    <li>API Integration</li>
-                    <li>UI/UX Design</li>
-                    <li>Data Analysis</li>
-                    <li>Project Management</li>
-                    <li>GitHub</li>
-                    <li>Vercel</li> */}
-                </ul>
-            </div>
-        </motion.section>
-    );
+      {/* Right Column: Technical Skills */}
+      <div className="w-full">
+        <h4 className="text-2xl font-medium text-[#4b4b4b] border-b-2 border-gray-300 pb-2">Technologies</h4>
+        
+        {/* We dynamically generate the skills sections from our data object */}
+        {Object.entries(technologies).map(([category, skills]) => (
+          <div key={category} className="my-5">
+            <h5 className="w-full text-base font-bold text-[#222] mt-4 mb-3 capitalize">{category}</h5>
+            <ul className="flex flex-wrap gap-2">
+              {skills.map(skill => (
+                <li 
+                  key={skill}
+                  className="bg-[#e6e9ef] rounded-md py-1.5 px-3 text-sm text-[#333] shadow-md border border-gray-200 hover:bg-[#d1d7e0] transition-colors duration-300 cursor-default"
+                >
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </motion.section>
+  );
 };
+
 export default About;

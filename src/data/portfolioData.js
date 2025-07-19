@@ -215,16 +215,44 @@ export const portfolioData = {
 
   // Skills/Technologies
   technologies: {
-    languages: ['JavaScript', 'Python', 'PHP', 'C++'],
-    frontend: ['React', 'React Native', 'HTML', 'CSS'],
-    backend: ['Node.js', 'Express.js', 'RESTful APIs', 'Socket.io'],
-    databases: ['MongoDB', 'PostgreSQL', 'MySQL'],
-    tools: ['GitHub', 'Vercel', 'Docker', 'CI/CD', 'Figma', 'Arduino']
+    "Frontend": [
+    'Next.js', // Prominently featured
+    'React', 
+    'React Native', 
+    'Tailwind CSS', // Important to list
+    'HTML & CSS'
+  ],
+  "Backend": [
+    'Node.js', 
+    'Express.js', 
+    'RESTful APIs',
+    'Socket.io'
+  ],
+  "Databases & Platforms": [
+    'Supabase', // Highlighted
+    'PostgreSQL', 
+    'MongoDB', 
+    'MySQL',
+    'Vercel'
+  ],
+  "AI & LLM Integration": [ // NEW high-value category
+    'AI Code Generation (Copilot, Cursor)',
+    'LLM API Integration (OpenAI)',
+    'AI-Powered Debugging',
+    'CI/CD with AI Analysis'
+  ],
+  "Tools & Other Skills": [
+    'Stripe', // Added
+    'Docker',
+    'Git & GitHub',
+    'Figma',
+    'UI/UX Principles'
+  ],
   },
   about: {
-    background: "Hello, I'm Loki, a Web Developer passionate about building impactful websites and web applications. With a strong background in Mechanical Engineering (Robotics & Mechatronics, NTU, First-Class Honours), I specialise in creating user-friendly web applications, blending engineering precision with software development and data analytics skills.",
-    skills: "I'm experienced with React, PostgreSQL, MongoDB, and RESTful APIs, and I enjoy tackling new challenges with every project. Outside of work, I love analog photography, and staying active through sports and nature hikes. I'm passionate about parrots (being a parrot owner) and travelling, and always eager to connect with others in tech and innovation!",
-    openToWork: "I'm currently open to new opportunities in software development and data analytics and am eager to connect with others passionate about tech and innovation!"
+    background: "I'm a full-stack developer with a passion for building robust, scalable, and intuitive web applications. My journey in tech is driven by a constant desire to learn and leverage cutting-edge tools to solve complex problems efficiently.",
+    skills: "I specialize in the modern JavaScript ecosystem, but what truly sets my workflow apart is the integration of AI-driven development practices. I use tools like GitHub Copilot and LLMs to accelerate development, enhance code quality, and build smarter, more responsive applications.",
+    openToWork: "I am actively seeking new opportunities where I can contribute my skills in full-stack development and innovative problem-solving. Let's build something amazing together!"
   }
 };
 
