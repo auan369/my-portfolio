@@ -3,21 +3,21 @@
 import { FaGithub, FaLaptop, FaFile } from 'react-icons/fa';
 
 // Import project images
-import pluginImage from '../assets/images/plugin.png';
+import pluginImage from '../assets/images/plugin.jpg';
 import demoGif from '../assets/images/demo.gif';
-import petAppImage from '../assets/images/petapp2.png';
-import weatherImage from '../assets/images/weather.png';
-import portfolioImage from '../assets/images/portfolio.png';
-import cluckFoodImage from '../assets/images/CluckFoodHomeScreen.png';
-import tymImage from '../assets/images/tym.png';
-import icsrImage from '../assets/images/ICSR.png';
-import imuImage from '../assets/images/imu.png';
+import petAppImage from '../assets/images/petapp2.jpg';
+import weatherImage from '../assets/images/weather.jpg';
+import portfolioImage from '../assets/images/portfolio.jpg';
+import cluckFoodImage from '../assets/images/CluckFoodHomeScreen.jpg';
+import tymImage from '../assets/images/tym.jpg';
+import icsrImage from '../assets/images/ICSR.jpg';
+import imuImage from '../assets/images/imu.jpg';
 
 export const portfolioData = {
   projects: [
     {
       id: 0,
-      title: "Inventory Management WordPress plugins [Freelance Web Developer]",
+      title: "Inventory Management WordPress Plugins [Freelance Web Developer]",
       description: "In this project, I developed a custom WordPress plugin with MySQL, AJAX, shortcodes, and admin menus for seamless integration. Key features include drag-and-drop hierarchy management and interactive inventory management systems. I also designed REST API endpoints for efficient data retrieval and management. A master MongoDB database was also developed and optimised to populate the local MySQL database with updated loot items, with queries optimised and real-time UI implemented to display and edit inventory items and their details.",
       techStack: ['WordPress', 'PHP', 'MySQL', 'MongoDB', 'JavaScript', 'CSS', 'HTML5', 'Node.js', 'Vercel'],
       image: pluginImage,
@@ -220,6 +220,11 @@ export const portfolioData = {
     backend: ['Node.js', 'Express.js', 'RESTful APIs', 'Socket.io'],
     databases: ['MongoDB', 'PostgreSQL', 'MySQL'],
     tools: ['GitHub', 'Vercel', 'Docker', 'CI/CD', 'Figma', 'Arduino']
+  },
+  about: {
+    background: "Hello, I'm Loki, a Web Developer passionate about building impactful websites and web applications. With a strong background in Mechanical Engineering (Robotics & Mechatronics, NTU, First-Class Honours), I specialise in creating user-friendly web applications, blending engineering precision with software development and data analytics skills.",
+    skills: "I'm experienced with React, PostgreSQL, MongoDB, and RESTful APIs, and I enjoy tackling new challenges with every project. Outside of work, I love analog photography, and staying active through sports and nature hikes. I'm passionate about parrots (being a parrot owner) and travelling, and always eager to connect with others in tech and innovation!",
+    openToWork: "I'm currently open to new opportunities in software development and data analytics and am eager to connect with others passionate about tech and innovation!"
   }
 };
 

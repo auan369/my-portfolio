@@ -31,7 +31,7 @@ This checklist outlines the steps to refactor and enhance the portfolio website.
     ```
   - Populate this array with the data currently hardcoded in `src/components/Projects.jsx`.
 
-- [ ] **1.3: Refactor `Projects.jsx` to Use Abstracted Data**
+- [X] **1.3: Refactor `Projects.jsx` to Use Abstracted Data**
   - In `src/components/Projects.jsx`, import the `projectsData` array: `import { projectsData } from '../data/portfolioData';`.
   - Remove the hardcoded `<ProjectsCard />` components.
   - Replace them with a `.map()` loop that renders a `ProjectsCard` for each item in the `projectsData` array.
@@ -60,7 +60,7 @@ This checklist outlines the steps to refactor and enhance the portfolio website.
     <a href={githubLink} target="_blank" rel="noopener noreferrer"> ... </a>
     ```
 
-- [ ] **1.5: (Optional but Recommended) Abstract Resume/Skills Data**
+- [X] **1.5: (Optional but Recommended) Abstract Resume/Skills Data**
   - In `src/data/portfolioData.js`, create and export another object or array for your skills and experience.
   - Refactor `src/components/Resume.jsx` to import and map over this data, similar to the projects section.
 
@@ -68,7 +68,7 @@ This checklist outlines the steps to refactor and enhance the portfolio website.
 
 *Goal: Make the website load faster and feel smoother for the user.*
 
-- [ ] **2.1: Optimize Images**
+- [X] **2.1: Optimize Images**
   - For each image in `src/assets/images/`, use an online tool like [Squoosh](https://squoosh.app/) to compress it.
   - **(Optional)** Convert the compressed images to the `.webp` format for even better performance.
   - In `src/components/ProjectsCard.jsx`, add the `loading="lazy"` attribute to the `<img>` tag to defer loading of off-screen images.
@@ -76,7 +76,7 @@ This checklist outlines the steps to refactor and enhance the portfolio website.
     <img loading="lazy" ... />
     ```
 
-- [ ] **2.2: Implement Code Splitting with `React.lazy`**
+- [X] **2.2: Implement Code Splitting with `React.lazy`**
   - In `src/App.jsx`, change the static imports for components that are "below the fold" to be dynamic.
   - Target components: `Projects`, `Resume`, `Contact`, `Footer`.
     ```jsx
@@ -86,7 +86,7 @@ This checklist outlines the steps to refactor and enhance the portfolio website.
     const Projects = React.lazy(() => import('./components/Projects'));
     ```
 
-- [ ] **2.3: Add `<Suspense>` Fallback**
+- [X] **2.3: Add `<Suspense>` Fallback**
   - In `src/App.jsx`, wrap the lazy-loaded components in a `<React.Suspense>` component.
   - Provide a simple fallback UI, like a loading spinner or text, to show while the component code is being downloaded.
     ```jsx
@@ -100,7 +100,7 @@ This checklist outlines the steps to refactor and enhance the portfolio website.
     </Suspense>
     ```
 
-- [ ] **2.4: Optimize Animations**
+- [X] **2.4: Optimize Animations**
   - In components that use Framer Motion for entrance animations (like `Title.jsx` or the main `section` tags), replace the `animate` prop with `whileInView`.
   - This ensures animations only trigger when the element is visible in the viewport.
     ```jsx

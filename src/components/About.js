@@ -1,21 +1,29 @@
 import React  from  'react';
+import { motion } from 'framer-motion';
+import portfolioData from '../data/portfolioData';
 import './About.css';
 const About = () => {
     return (
-        <section id="about" className="about-section">
+        <motion.section 
+        id="about" className="about-section"
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 1, delay: 0.1 }}
+        >
             <h3>About Me</h3>
             <div className="about-subsection">
 
                 <h4>Background</h4>
                     <p>
-                        Hello, I'm Loki, a Web Developer passionate about building impactful websites and web applications. With a strong background in Mechanical Engineering (Robotics & Mechatronics, NTU, First-Class Honours), I specialise in creating user-friendly web applications, blending engineering precision with software development and data analytics skills.
+                        {portfolioData.about.background}
                     </p>
 
                     <p>
-                        I'm experienced with React, PostgreSQL, MongoDB, and RESTful APIs, and I enjoy tackling new challenges with every project. Outside of work, I love analog photography, and staying active through sports and nature hikes. I'm passionate about parrots (being a parrot owner) and travelling, and always eager to connect with others in tech and innovation!
+                        {portfolioData.about.skills}
                     </p>
                     <p>
-                        I'm currently open to new opportunities in software development and data analytics and am eager to connect with others passionate about tech and innovation!
+                        {portfolioData.about.openToWork}
                     </p>
             </div>
             <div className="about-subsection">   
@@ -80,7 +88,7 @@ const About = () => {
                     <li>Vercel</li> */}
                 </ul>
             </div>
-        </section>
+        </motion.section>
     );
 };
 export default About;

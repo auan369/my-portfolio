@@ -6,7 +6,7 @@ const IndivProject = ({ title, description, techStack, image, links, device }) =
         <div className="project">
             <div className="project-image">
                 <div className={device}>
-                    <img src={image} alt={`${title} screenshot`} />
+                    <img loading="lazy" src={image} alt={`${title} screenshot`} />
                 </div>
             </div>
             <div className="project-details">

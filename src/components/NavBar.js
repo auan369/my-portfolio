@@ -2,7 +2,7 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import './NavBar.css';
 import { FaHome, FaUser, FaProjectDiagram, FaFilePdf, FaEnvelope } from 'react-icons/fa';
-import Profile from '../assets/images/profile.png';
+import Profile from '../assets/images/profile.jpg';
 
 function NavBar() {
     return (
