@@ -23,7 +23,10 @@ const IndivProject = ({ title, description, techStack, image, links, device }) =
                 <div className="project-links">
                     {links?(links.map((link, index) => (
                     <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">
-                        {link.label}
+                        <p>
+                            {link.icon}
+                            {link.label}
+                        </p>
                     </a>
                     ))) : null}
                 </div>

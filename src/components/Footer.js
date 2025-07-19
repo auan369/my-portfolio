@@ -5,7 +5,7 @@ import './Footer.css';
 function Footer() {
   return (
     <footer className="footer">
-        <p>Designed and Developed by Kum Yew Loke. © 2024 </p>
+        <p>Designed and Developed by Kum Yew Loke. © 2025 </p>
     </footer>
   );
 }

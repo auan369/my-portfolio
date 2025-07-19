@@ -1,7 +1,7 @@
 // Resume.js
 import React from 'react';
 import './Resume.css';
-import ResumePic from './images/KumYewResume.png';
+import ResumePic from '../assets/images//KumYewResume.png';
 
 const Resume = () => {
     return (
