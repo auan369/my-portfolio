@@ -12,9 +12,26 @@ import cluckFoodImage from '../assets/images/CluckFoodHomeScreen.jpg';
 import tymImage from '../assets/images/tym.jpg';
 import icsrImage from '../assets/images/ICSR.jpg';
 import imuImage from '../assets/images/imu.jpg';
+import saasImage from '../assets/images/saasApp.jpg';
 
 export const portfolioData = {
   projects: [
+    {
+      id: 0,
+      title: "Secure SaaS Frontend Template with Supabase & Next.js",
+      description: "In this project, I developed a secure SaaS frontend template with Supabase and Next.js, featuring Supabase authentication and an authenticated user portal and dashboard. It was built with responsive and type-safe UI using Next.js, TypeScript, Tailwind CSS, and shadcn/ui. Best practices for authentication, data fetching from the Supabase PostgreSQL database, and state management were implemented, and an automated CI/CD pipeline using GitHub Actions was configured for quality assurance.",
+      techStack: ['Next.js', 'TypeScript', 'Supabase (Auth, PostgreSQL)', 'Tailwind CSS', 'shadcn/ui', 'GitHub Actions (CI/CD)', 'Vercel'],
+      image: saasImage,
+      device: 'laptop',
+      links: [
+        // Commented out as in original
+        // { label: <p><FaGithub/> GitHub</p>, url: 'https://github.com/auan369/rockpaperscissors-frontend' },
+        // { label: <p><FaLaptop/> Demo</p>, url: 'https://rockpaperscissors-frontend.onrender.com/' },
+      ],
+      category: 'Full Stack',
+      status: 'Completed',
+      featured: true
+    },
     {
       id: 0,
       title: "Inventory Management WordPress Plugins [Freelance Web Developer]",
