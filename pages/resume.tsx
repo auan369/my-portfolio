@@ -46,6 +46,7 @@ const HomePage: NextPage = () => {
             <Image 
             loading="lazy" 
             src={ResumePic} 
+            priority={true}
             alt="Kum Yew Resume" 
             className="w-full max-w-xs sm:max-w-md mb-6 rounded-lg shadow-lg"
             />

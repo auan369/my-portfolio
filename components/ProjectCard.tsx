@@ -51,6 +51,7 @@ const ProjectCard: React.FC<{ project: ProjectCardProps }> = ({ project }) => {
             <Image
               src={image}
               alt={`${title} screenshot`}
+              priority={project.id === 0}
               className={deviceImageBaseClasses}
               width={800} // IMPORTANT: Use the ACTUAL width of your source image
               height={600} // IMPORTANT: Use the ACTUAL height of your source image
