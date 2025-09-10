@@ -1,10 +1,12 @@
 // Resume.js
 import React from 'react';
 import { motion } from 'framer-motion';
-import ResumePic from '../assets/images/KumYewResume.jpg';
+import ResumePic from '../../public/images/KumYewResume.jpg';
 import { FaDownload } from 'react-icons/fa';
+import Image from 'next/image';
 
-const Resume = () => {
+
+const ResumeSection = () => {
     return (
         <motion.section 
         id="resume" 
@@ -14,11 +16,11 @@ const Resume = () => {
         viewport={{ once: false }}
         transition={{ duration: 1, delay: 0.1 }}
         >
-            <h3 className="text-4xl font-semibold text-[#444] mb-8">
+            <h1 className="text-4xl font-semibold text-[#444] mb-8">
                 Resume
-            </h3>
+            </h1>
             <div className="flex flex-col items-center p-6 w-full max-w-xl bg-white rounded-xl shadow-xl text-center">
-            <img 
+            <Image 
             loading="lazy" 
             src={ResumePic} 
             alt="Kum Yew Resume" 
@@ -39,4 +41,4 @@ const Resume = () => {
     );
 };
 
-export default Resume;
+export default ResumeSection;

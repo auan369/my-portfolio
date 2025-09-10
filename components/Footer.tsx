@@ -1,9 +1,11 @@
-// Footer.js
+// Footer.tsx
 import React from 'react';
-// We no longer need to import the CSS file
-// import './Footer.css';
 
-function Footer() {
+interface FooterProps {
+  ownerName: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ ownerName }) => {
   // Get the current year dynamically
   const currentYear = new Date().getFullYear();
 
@@ -11,7 +13,7 @@ function Footer() {
     // All styles from `.footer` are now here
     <footer className="w-full bg-[#333] text-white text-center py-4">
         <p className="text-sm">
-            Designed and Developed by Kum Yew Loke. © {currentYear}
+            Designed and Developed by {ownerName}. © {currentYear}
         </p>
     </footer>
   );
