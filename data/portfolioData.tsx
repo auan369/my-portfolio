@@ -3,18 +3,58 @@
 import { FaGithub, FaLaptop, FaFile } from 'react-icons/fa';
 
 // Import project images
-import pluginImage from '../assets/images/plugin.jpg';
-import demoGif from '../assets/images/demo.gif';
-import petAppImage from '../assets/images/petapp2.jpg';
-import weatherImage from '../assets/images/weather.jpg';
-import portfolioImage from '../assets/images/portfolio.jpg';
-import cluckFoodImage from '../assets/images/CluckFoodHomeScreen.jpg';
-import tymImage from '../assets/images/tym.jpg';
-import icsrImage from '../assets/images/ICSR.jpg';
-import imuImage from '../assets/images/imu.jpg';
-import saasImage from '../assets/images/saasApp.jpg';
+import pluginImage from '../public/images/plugin.jpg';
+import demoGif from '../public/images/demo.gif';
+import petAppImage from '../public/images/petapp2.jpg';
+import weatherImage from '../public/images/weather.jpg';
+import portfolioImage from '../public/images/portfolio.jpg';
+import cluckFoodImage from '../public/images/CluckFoodHomeScreen.jpg';
+import tymImage from '../public/images/tym.jpg';
+import icsrImage from '../public/images/ICSR.jpg';
+import imuImage from '../public/images/imu.jpg';
+import saasImage from '../public/images/saasApp.jpg';
+import { StaticImageData } from 'next/image';
 
-export const portfolioData = {
+export interface PortfolioItem {
+  id: number;
+  title: string;
+  description: string;
+  techStack: string[];
+  image: StaticImageData;
+  device: 'laptop' | 'phone';
+  links: { label: string; icon: React.ReactNode; url: string }[];
+  category: string;
+  status: string;
+  featured: boolean;
+}
+
+export interface PortfolioData {
+  projects: PortfolioItem[];
+  owner: {
+    name: string;
+    nickname: string;
+    title: string;
+    description: string;
+  };
+  contact: {
+    email: string;
+    linkedin: string;
+    github: string;
+    instagram: string;
+  };
+  categories: string[];
+  technologies: {
+    [key: string]: string[];
+  };
+  about: {
+    background: string;
+    skills: string;
+    openToWork: string;
+  };
+}
+
+
+export const portfolioData: PortfolioData = {
   projects: [
     {
       id: 0,

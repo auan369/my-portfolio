@@ -13,11 +13,30 @@
 
 # misc
 .DS_Store
+*.pem
+
+# Local environment variables
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Build artifacts
+/.next/
+/out/
+
+# Vercel deployment logs
+.vercel
+
+# Editor directories and files
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json

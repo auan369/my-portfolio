@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 // We no longer need to import the CSS file
 // import './Contact.css';
 import { FaEnvelope, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
-import portfolioData from '../data/portfolioData';
+import portfolioData from '../src/data/portfolioData';
 
 const Contact = () => {
     // A small array makes the JSX much cleaner

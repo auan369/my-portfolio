@@ -1,7 +1,7 @@
 // About.js
 import React from 'react';
 import { motion } from 'framer-motion';
-import portfolioData from '../data/portfolioData';
+import portfolioData from '../src/data/portfolioData';
 
 // We get both the 'about' text and 'technologies' data
 const { about, technologies } = portfolioData;
