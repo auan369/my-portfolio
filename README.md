@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Kum Yew Loke - Personal Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-LIVE-black?style=for-the-badge&logo=vercel)](https://kyloke-portfolio.vercel.app/)
+[![Tech Stack: Next.js](https://img.shields.io/badge/Next.js-14-blue?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-## Available Scripts
+A fully responsive, SEO-optimized personal portfolio built with Next.js, TypeScript, and Tailwind CSS. This project showcases my skills, features my work, and provides a clear point of contact for freelance opportunities.
 
-In the project directory, you can run:
+**[![Portfolio Screenshot](./public/images/portfolio.png)](https://kyloke-portfolio.vercel.app/)**
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🌟 Project Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This portfolio was strategically migrated from a standard client-side rendered (CSR) **Create React App** to a modern **Next.js** application. The primary motivation for this architectural overhaul was to significantly improve **SEO**, **performance (Core Web Vitals)**, and the overall **developer experience**.
 
-### `npm test`
+The result is a fast, discoverable, and easily maintainable website that serves as a powerful tool for my freelance business.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✨ Key Features
 
-### `npm run build`
+- **Static Site Generation (SSG):** Blazing-fast page loads and optimal SEO by serving pre-rendered HTML.
+- **Advanced Animations:** Fluid page transitions and scroll-triggered animations powered by **Framer Motion**.
+- **Type-Safe Codebase:** Built entirely with **TypeScript** for robust, error-free development.
+- **Responsive Design:** A mobile-first approach using **Tailwind CSS** ensures a seamless experience on all devices.
+- **Optimized Images:** Automatic image optimization, lazy loading, and modern format conversion using `next/image`.
+- **Functional Contact Form:** A secure contact form that sends emails via a **Next.js API Route**, protecting credentials and providing a serverless backend.
+- **Component-Based Architecture:** A clean and scalable structure with reusable UI elements and page sections.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Technology      | Description                               |
+| --------------- | ----------------------------------------- |
+| **Next.js**     | React framework for SSG, SSR, and routing |
+| **React**       | UI library for building components        |
+| **TypeScript**  | Static typing for JavaScript              |
+| **Tailwind CSS**| Utility-first CSS framework for styling   |
+| **Framer Motion**| Animation library for React               |
+| **Resend / Formspree** | Email delivery service for contact form |
+| **ESLint**      | Code linting and quality assurance        |
+| **Vercel**      | Hosting and serverless functions          |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Getting Started
 
-### `npm run eject`
+To run this project locally, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
+    cd YOUR_REPO_NAME
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3.  **Set up environment variables**
+    Create a `.env.local` file in the root of the project and add the necessary variables for the contact form.
+    ```env
+    # For the contact form (using Resend as an example)
+    RESEND_API_KEY=your_secret_api_key
+    EMAIL_TO_SEND_TO=your.email@example.com
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4.  **Run the development server**
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-## Learn More
+## 🏗️ Architectural Decisions & Learnings
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project was a deep dive into modern web architecture. Here are some key decisions I made:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Why Next.js over CRA?**
+  I chose to migrate to Next.js primarily for its out-of-the-box SEO capabilities. Pre-rendering pages as static HTML makes the site instantly crawlable by search engines and dramatically improves the First Contentful Paint (FCP) and Largest Contentful Paint (LCP) scores.
 
-### Code Splitting
+- **Component Structure:**
+  I broke down pages into two types of components:
+  1.  `components/sections`: Large, self-contained blocks that make up a page (e.g., `HeroSection`, `PortfolioSection`).
+  2.  `components/ui`: Small, reusable UI elements used across the site (e.g., `SkillPill`, `Socials`).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **The `<PageWrapper>` Layout Pattern:**
+  To handle page-specific backgrounds while maintaining consistent content padding, I created a `<PageWrapper>` component. This layout component applies the necessary padding and max-width constraints, allowing the parent `<section>` tag to have a "full-bleed" background. This is a clean, reusable solution for a common layout challenge.
 
-### Analyzing the Bundle Size
+- **Backend with API Routes:**
+  Instead of relying on a client-side mailto link, I built a Next.js API Route to handle the contact form. This allows for server-side validation and securely uses an email service provider's API key without exposing it in the browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🌐 Deployment
 
-### Making a Progressive Web App
+This site is deployed on **Vercel**. The Vercel platform is deeply integrated with Next.js, providing a seamless deployment experience. Every push to the `main` branch automatically triggers a new production build and deployment.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+Designed and developed by Kum Yew Loke.
