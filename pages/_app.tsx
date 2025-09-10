@@ -5,6 +5,7 @@ import Footer from '../components/Footer'; // Update path if needed
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
 import '../styles/globals.css';
+import { portfolioData } from '../data/portfolioData';
 
 
 // In Phase 4 we will import global styles here
@@ -28,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
         </motion.main>
       </AnimatePresence>
-      <Footer />
+      <Footer ownerName={portfolioData.owner.name} />
     </>
   );
 }
