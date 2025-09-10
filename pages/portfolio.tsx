@@ -3,10 +3,15 @@ import type { NextPage } from 'next';
 import { portfolioData } from '../data/portfolioData'; // Adjust path if needed
 import ProjectCard from '../components/ProjectCard'; // Your card component
 import Head from 'next/head';
+import PageWrapper from '../components/layout/PageWrapper';
+import { motion } from 'framer-motion';
 
 const PortfolioPage: NextPage = () => {
   return (
-    <section id="portfolio">
+    <motion.section 
+        id="portfolio"
+        className="w-full flex flex-col items-center py-20 px-5 md:px-20 text-[#333] font-sans"
+    >
       <Head>
         <title>{portfolioData.owner.name} | Portfolio</title>
         <meta
@@ -14,13 +19,15 @@ const PortfolioPage: NextPage = () => {
           content={`Explore a selection of web development projects by ${portfolioData.owner.name}, showcasing skills in React, Next.js, and modern web technologies.`}
         />
       </Head>
-      <h3 className="text-4xl font-semibold text-[#2d2d2d] m-10 text-center">Projects</h3>
-      <div className="space-y-12"> {/* Adds space between project cards */}
-        {portfolioData.projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
-    </section>
+      <PageWrapper>
+        <h1 className="text-4xl font-semibold text-[#2d2d2d] m-10 text-center">Projects</h1>
+        <div className="space-y-12"> {/* Adds space between project cards */}
+          {portfolioData.projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </PageWrapper>
+    </motion.section>
   );
 };
 

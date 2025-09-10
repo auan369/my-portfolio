@@ -49,7 +49,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ owner }) => {
         variants={itemVariants}
         className="text-4xl md:text-6xl font-bold text-[#2c3e50] m-4"
       >
-        Hello, I'm {owner.nickname}
+        Hello, I&apos;m {owner.nickname}
       </motion.h1>
 
       <motion.p

@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <AnimatePresence mode="wait">
         <motion.main
             key={router.route}
-            className="flex-grow pt-16 px-4 sm:px-8" // <--- THE KEY CHANGE
+            className="flex-grow" // <--- THE KEY CHANGE
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}

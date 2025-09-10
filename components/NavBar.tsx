@@ -16,7 +16,7 @@ const NavBar: React.FC = () => {
         { href: "/about", text: "About", icon: <FaUser /> },
         { href: "/portfolio", text: "Portfolio", icon: <FaProjectDiagram /> },
         // Assuming you'll have a resume page or a direct file link
-        { href: "/resume.pdf", text: "Resume", icon: <FaFilePdf /> }, 
+        { href: "/resume", text: "Resume", icon: <FaFilePdf /> }, 
         { href: "/contact", text: "Contact", icon: <FaEnvelope /> },
     ];
 

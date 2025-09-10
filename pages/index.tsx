@@ -1,15 +1,9 @@
 // pages/index.tsx
 import type { NextPage } from 'next';
 import Head from 'next/head';
-
-// Step 1: Import the data at the page level
 import { portfolioData } from '../data/portfolioData';
-
-// Step 2: Import the section component(s)
 import HeroSection from '../components/sections/HeroSection';
-// You will later import other sections here
-// import AboutSection from '../components/sections/AboutSection';
-// import PortfolioSection from '../components/sections/PortfolioSection';
+
 
 const HomePage: NextPage = () => {
   return (
