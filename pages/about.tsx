@@ -6,16 +6,24 @@ import { portfolioData } from '../data/portfolioData';
 import BackgroundInfo from '../components/sections/about/BackgroundInfo';
 import TechSkills from '../components/sections/about/TechSkills';
 import PageWrapper from '../components/layout/PageWrapper';
+import SEO from '../components/SEO';
+import { PageMetadata } from '../components/SEO'; // Import the type
+
+const metadata: PageMetadata = {
+  title: 'About Me',
+  description: 'Learn about my background as a full-stack developer and the technologies that I use. I am dedicated to providing the best service.',
+  // ogImage: 'https://www.myawesomewebsite.com/images/about-us-social.jpg', // A custom social image for this page
+};
 
 const AboutPage: NextPage = () => {
-  const { about, technologies, owner } = portfolioData;
 
   return (
     <>
-      <Head>
-        <title>About Me | {owner.name}</title>
-        <meta name="description" content={about.background} />
-      </Head>
+      {/* <Head> */}
+        {/* <title>{portfolioData.owner.name} | About Me</title> */}
+        {/* <meta name="description" content={about.background} /> */}
+      <SEO metadata={metadata} />
+      {/* </Head> */}
 
       <motion.section
         id="about"
@@ -31,8 +39,8 @@ const AboutPage: NextPage = () => {
             </h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 items-start">
-                <BackgroundInfo about={about} />
-                <TechSkills technologies={technologies} />
+                <BackgroundInfo about={portfolioData.about} />
+                <TechSkills technologies={portfolioData.technologies} />
             </div>
         </PageWrapper>
         

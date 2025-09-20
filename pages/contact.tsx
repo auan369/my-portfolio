@@ -3,12 +3,21 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
+import SEO from '../components/SEO';
+import { PageMetadata } from '../components/SEO'; // Import the type
+
 
 // Import data and new components
 import { portfolioData } from '../data/portfolioData';
 import PageWrapper from '../components/layout/PageWrapper';
 import Socials from '../components/ui/Socials';
 import ContactForm from '../components/sections/ContactForm';
+
+const metadata: PageMetadata = {
+  title: 'Contact Me',
+  description: 'Get in touch with me for project inquiries or to connect on social media. Let us discuss how can bring your vision to reality.',
+  // ogImage: 'https://www.myawesomewebsite.com/images/about-us-social.jpg', // A custom social image for this page
+};
 
 const ContactPage: NextPage = () => {
   const { owner, contact } = portfolioData;
@@ -23,10 +32,11 @@ const ContactPage: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Contact | {owner.name}</title>
-        <meta name="description" content="Get in touch with me for project inquiries or to connect on social media." />
-      </Head>
+      {/* <Head> */}
+        {/* <title>Contact | {owner.name}</title> */}
+        {/* <meta name="description" content="Get in touch with me for project inquiries or to connect on social media." /> */}
+        <SEO metadata={metadata} />
+      {/* </Head> */}
 
       <motion.section
         id="contact"

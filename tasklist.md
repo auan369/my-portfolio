@@ -43,17 +43,17 @@
 
 ### **Phase 2: Migrating Your Components & Pages**
 
-*   [ ] **Move Components:** Move your `src/components` folder to the root of your project (so it's just `components/`).
+*   [X] **Move Components:** Move your `src/components` folder to the root of your project (so it's just `components/`).
 
-*   [ ] **Recreate Your Pages(as .tsx files):**  For each page, create a .tsx file in the pages directory and move your component code into it, adding basic types like `NextPage`.
+*   [X] **Recreate Your Pages(as .tsx files):**  For each page, create a .tsx file in the pages directory and move your component code into it, adding basic types like `NextPage`.
 
-*   [ ] **Create `pages/_app.tsx`:** Create this file to act as your global layout wrapper. This is where your `<Navbar>`, `<Footer>`, and global CSS will go.
+*   [X] **Create `pages/_app.tsx`:** Create this file to act as your global layout wrapper. This is where your `<Navbar>`, `<Footer>`, and global CSS will go.
 
-*   [ ] **Convert Routing:**
-    *   [ ] Find all uses of `<Link>` from `react-router-dom`.
-    *   [ ] Replace them with `<Link>` from `next/link` (e.g., `to="/about"` becomes `href="/about"`).
+*   [X] **Convert Routing:**
+    *   [X] Find all uses of `<Link>` from `react-router-dom`.
+    *   [X] Replace them with `<Link>` from `next/link` (e.g., `to="/about"` becomes `href="/about"`).
 
-*   [ ] **Type Your Components:** As you migrate components, convert them to .tsx and create interfaces for their props.
+*   [X] **Type Your Components:** As you migrate components, convert them to .tsx and create interfaces for their props.
 
 ---
 

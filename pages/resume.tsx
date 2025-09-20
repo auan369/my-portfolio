@@ -10,18 +10,21 @@ import React from 'react';
 import ResumePic from '../public/images/KumYewResume.jpg';
 import { FaDownload } from 'react-icons/fa';
 import Image from 'next/image';
+import SEO from '../components/SEO';
+import { PageMetadata } from '../components/SEO'; // Import the type
+
+const metadata: PageMetadata = {
+  title: 'Resume',
+  description: `Download the resume of ${portfolioData.owner.name}, showcasing skills in React, Next.js, and modern web technologies.`,
+};
 
 
 const HomePage: NextPage = () => {
   return (
     <>
-    <Head>
-        <title>{portfolioData.owner.name} | Resume</title>
-        <meta
-            name="description"
-            content={`Download the resume of ${portfolioData.owner.name}, showcasing skills in React, Next.js, and modern web technologies.`}
-        />
-    </Head>
+    
+    <SEO metadata={metadata} />
+    
     <motion.section 
         id="resume"
         className="w-full flex flex-col items-center py-20 px-5 md:px-20 bg-[#e1e5ea] text-[#333] font-sans"
@@ -44,7 +47,7 @@ const HomePage: NextPage = () => {
             </h1>
             <div className="flex flex-col items-center p-6 w-full max-w-xl bg-white rounded-xl shadow-xl text-center">
             <Image 
-            loading="lazy" 
+            // loading="lazy" 
             src={ResumePic} 
             priority={true}
             alt="Kum Yew Resume" 

@@ -3,19 +3,21 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { portfolioData } from '../data/portfolioData';
 import HeroSection from '../components/sections/HeroSection';
+import SEO from '../components/SEO';
+import { PageMetadata } from '../components/SEO'; // Import the type
 
+const metadata: PageMetadata = {
+  title: `Freelance Web Developer`,
+  description: portfolioData.owner.description,
+  // ogImage: 'https://www.myawesomewebsite.com/images/about-us-social.jpg', // A custom social image for this page
+};
 
 const HomePage: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>{portfolioData.owner.name} | Freelance Web Developer</title>
-        <meta
-          name="description"
-          content={portfolioData.owner.description}
-        />
-        {/* You can add more meta tags here, like for social sharing */}
-      </Head>
+      
+      <SEO metadata={metadata} />
+      
 
       {/* Step 3: Use the component and pass the required data as a prop */}
       <HeroSection owner={portfolioData.owner} />
