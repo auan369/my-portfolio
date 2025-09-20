@@ -32,6 +32,7 @@ const SEO: React.FC<SEOProps> = ({ metadata }) => {
     <Head>
       <title>{title}</title>
       <meta name="description" content={finalMeta.description} />
+      <meta name="google-site-verification" content="bthvjFTrqTLTmcOgzA0XQ1HlcvAXYk7DxVT492iCZbs" />
       <link rel="icon" href="/favicon.ico" />
       
       {/* --- Open Graph / Facebook / Social Media --- */}
