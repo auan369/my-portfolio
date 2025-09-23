@@ -33,7 +33,12 @@ const SEO: React.FC<SEOProps> = ({ metadata }) => {
       <title>{title}</title>
       <meta name="description" content={finalMeta.description} />
       <meta name="google-site-verification" content="bthvjFTrqTLTmcOgzA0XQ1HlcvAXYk7DxVT492iCZbs" />
-      <link rel="icon" href="/favicon.ico" />
+      {/* <link rel="icon" href="/favicon.ico" /> */}
+      <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/site.webmanifest" />
       
       {/* --- Open Graph / Facebook / Social Media --- */}
       <meta property="og:type" content="website" />
