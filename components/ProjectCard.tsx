@@ -27,7 +27,7 @@ const LaptopFrame: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 );
 
 const PhoneFrame: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="relative flex justify-center items-center w-[15rem] h-[25rem] p-2 border-[1rem] border-black rounded-2xl bg-black">
+  <div className="relative flex justify-center items-center w-[15rem] h-[29rem] p-2 border-[1rem] border-black rounded-2xl bg-black">
     {/* The "notch" of the phone */}
     <div className="absolute top-2 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-[#333] rounded-full z-10" />
     {children}
@@ -74,7 +74,7 @@ const ProjectCard: React.FC<{ project: ProjectCardProps }> = ({ project }) => {
       {/* Details Section */}
       <div className="flex-1 p-5 flex flex-col justify-center">
         <h2 className="text-2xl font-bold text-[#333]">{title}</h2>
-        <p className="my-4 text-[#555] leading-relaxed">{description}</p>
+        <p className="my-4 text-justify text-[#555] leading-relaxed">{description}</p>
         
         <div className="my-2">
           <h4 className="text-center text-[#666] mb-2 font-semibold">Tech Stack:</h4>
@@ -88,20 +88,33 @@ const ProjectCard: React.FC<{ project: ProjectCardProps }> = ({ project }) => {
         </div>
 
         <div className="mt-4 flex justify-center items-center gap-4">
-          {links?.map((link) => (
-            <a 
-              key={link.label} 
-              href={link.url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-[#444] text-white rounded-lg px-3 py-2 text-sm font-bold no-underline hover:bg-[#333] transition-colors duration-300"
-            >
-              <span className="flex items-center gap-2">
+          {links?.map((link) => {
+            const isDisabled = !link.url || link.url === "" || link.url === "#";
+            return isDisabled ? (
+              /* Disabled Version */
+              <div 
+                key={link.label} 
+                className="bg-[#333] text-white border border-[#333] rounded-lg px-3 py-2 text-sm font-bold flex items-center gap-2 cursor-not-allowed opacity-60"
+                title="Private Project / NDA"
+              >
                 {link.icon}
                 {link.label}
-              </span>
-            </a>
-          ))}
+              </div>
+            ) : (
+              <a 
+                key={link.label} 
+                href={link.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-[#444] text-white rounded-lg px-3 py-2 text-sm font-bold no-underline hover:bg-[#333] transition-colors duration-300"
+              >
+                <span className="flex items-center gap-2">
+                  {link.icon}
+                  {link.label}
+                </span>
+              </a>
+            )
+          })}
         </div>
       </div>
     </div>
