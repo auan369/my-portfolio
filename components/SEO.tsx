@@ -11,7 +11,7 @@ export interface PageMetadata {
 
 // --- Define your site-wide default metadata ---
 const defaultMetadata: Partial<PageMetadata> = {
-  description: 'A detail-oriented Full-Stack Developer dedicated to building and managing impactful websites and web applications.',
+  description: 'Principal Software Consultant and AI Systems Architect specializing in stabilizing legacy web platforms, building offline-first mobile architectures, and engineering enterprise SaaS solutions.',
   ogImage: 'https://kyloke-portfolio.vercel.app/social-card.jpg',
 };
 

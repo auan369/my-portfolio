@@ -14,9 +14,8 @@ import Socials from '../components/ui/Socials';
 import ContactForm from '../components/sections/ContactForm';
 
 const metadata: PageMetadata = {
-  title: 'Contact Me',
-  description: 'Get in touch with me for project inquiries or to connect on social media. Let us discuss how can bring your vision to reality.',
-  // ogImage: 'https://www.myawesomewebsite.com/images/about-us-social.jpg', // A custom social image for this page
+  title: 'Contact | Book a Technical Consultation',
+  description: 'Discuss your project requirements. Available for strategic technical partnership, system architecture reviews, and lead engineering engagements.',
 };
 
 const ContactPage: NextPage = () => {

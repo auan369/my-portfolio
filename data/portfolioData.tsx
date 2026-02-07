@@ -11,6 +11,7 @@ import saasImage from '../public/images/saasApp.jpg';
 import promptImage from '../public/images/prompt.jpg';
 import sg60Image from '../public/images/sg60magicball.gif';
 import icsrImage from '../public/images/ICSR.jpg';
+import cginstrumentsImage from '../public/images/cg.gif';
 // You should create/use abstract high-quality placeholders for the new "Consultancy" items
 import { StaticImageData } from 'next/image';
 
@@ -104,6 +105,18 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: 4,
+      title: "Email Verification SaaS Engine | Systems Engineer",
+      description: "Designed a cost-optimized, multi-stage email validation engine using Redis caching to minimize paid API usage. Achieved a 36% reduction in operational costs by implementing a proprietary filtering logic for high-volume GTM (Go-To-Market) tools.",
+      techStack: ['Python', 'Node.js', 'Redis', 'REST APIs'],
+      image: saasImage,
+      device: 'laptop',
+      links: [{ label: 'Scalability Architecture', icon: <FaDatabase/>, url: '' }], 
+      category: 'Full Stack',
+      status: 'Completed',
+      featured: false
+    },
+    {
+      id: 5,
       title: "Interactive SG60 Magic Ball | Full-Stack Developer",
       description: "Engineered a highly interactive full-stack web application featuring complex CSS-driven holographic projections. Architected a serverless backend with Row Level Security (RLS) for enterprise-grade data protection and custom PostgreSQL RPCs for atomic data updates.",
       techStack: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Vercel'],
@@ -118,19 +131,25 @@ export const portfolioData: PortfolioData = {
       featured: false
     },
     {
-      id: 5,
-      title: "Email Verification SaaS Engine | Systems Engineer",
-      description: "Designed a cost-optimized, multi-stage email validation engine using Redis caching to minimize paid API usage. Achieved a 36% reduction in operational costs by implementing a proprietary filtering logic for high-volume GTM (Go-To-Market) tools.",
-      techStack: ['Python', 'Node.js', 'Redis', 'REST APIs'],
-      image: saasImage,
+      id: 6,
+      title: "Corporate Identity for Precision Engineering | CG Instruments",
+      description: "Designed and engineered a high-performance corporate web presence for a scientific instrument manufacturer. Leveraged my background in Mechanical Engineering to translate complex technical product catalogs into an intuitive, accessible digital experience. Optimized for SEO and global market reach.",
+      techStack: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'SEO Optimization'], // Update with actual stack
+      image: cginstrumentsImage, // You'll need to add a screenshot import
       device: 'laptop',
-      links: [{ label: 'Scalability Architecture', icon: <FaDatabase/>, url: '' }], 
-      category: 'Full Stack',
+      links: [
+        { 
+          label: 'Live Site', 
+          icon: <FaLaptop/>, 
+          url: 'https://www.cginstruments.com/' 
+        }
+      ],
+      category: 'Frontend',
       status: 'Completed',
-      featured: false
+      featured: false // Keep false so it sits in the 'Selected Projects' grid, not the top hero slots
     },
     {
-      id: 6,
+      id: 7,
       title: "Thesis: 3D Human Digital Twin | Robotics Research",
       description: "Published at ICSR + BioMed 2024. Implemented soft-body physics to replicate human tissue in 3D walking simulations. Developed custom C++ scripting and Python APIs for high-accuracy human-robot interaction modeling.",
       techStack: ['C++', 'Python', 'Modeling & Simulation', 'MuJoCo'],

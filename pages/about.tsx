@@ -10,9 +10,8 @@ import SEO from '../components/SEO';
 import { PageMetadata } from '../components/SEO'; // Import the type
 
 const metadata: PageMetadata = {
-  title: 'About Me',
-  description: 'Learn about my background as a full-stack developer and the technologies that I use. I am dedicated to providing the best service.',
-  // ogImage: 'https://www.myawesomewebsite.com/images/about-us-social.jpg', // A custom social image for this page
+  title: 'About Me | AI-Augmented Engineering',
+  description: 'First-Class Honours Engineer leveraging AI-augmented workflows to deliver lead-level architecture at speed. Expert in React, Node.js, AWS, and System Stabilization.',
 };
 
 const AboutPage: NextPage = () => {

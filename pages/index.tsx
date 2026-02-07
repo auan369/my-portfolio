@@ -7,9 +7,8 @@ import SEO from '../components/SEO';
 import { PageMetadata } from '../components/SEO'; // Import the type
 
 const metadata: PageMetadata = {
-  title: `Freelance Web Developer`,
-  description: portfolioData.owner.description,
-  // ogImage: 'https://www.myawesomewebsite.com/images/about-us-social.jpg', // A custom social image for this page
+  title: `Full-Stack Engineer & AI Systems Architect | Loke Software`,
+  description: "Strategic technical partner for startups and enterprises. Specializing in AI-augmented development, AWS infrastructure, and high-performance web/mobile architecture.",
 };
 
 const HomePage: NextPage = () => {
