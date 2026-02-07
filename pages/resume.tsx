@@ -14,8 +14,8 @@ import SEO from '../components/SEO';
 import { PageMetadata } from '../components/SEO'; // Import the type
 
 const metadata: PageMetadata = {
-  title: 'Resume',
-  description: `Download the resume of ${portfolioData.owner.name}, showcasing skills in React, Next.js, and modern web technologies.`,
+  title: 'Resume | Senior Full-Stack Engineer',
+  description: `View the professional credentials of ${portfolioData.owner.name}. Expertise in TypeScript, AWS, Next.js, and Mobile System Architecture.`,
 };
 
 

@@ -9,9 +9,8 @@ import SEO from '../components/SEO';
 import { PageMetadata } from '../components/SEO'; // Import the type
 
 const metadata: PageMetadata = {
-  title: 'Portfolio',
-  description: `Explore a selection of web development projects by ${portfolioData.owner.name}, showcasing skills in React, Next.js, and modern web technologies.`,
-  // ogImage: 'https://www.myawesomewebsite.com/images/about-us-social.jpg', // A custom social image for this page
+  title: 'Case Studies & Technical Portfolio',
+  description: `Explore high-stakes engagements by ${portfolioData.owner.name}, featuring venture-backed SaaS stabilization, enterprise event platforms, and offline-first mobile engineering.`,
 };
 
 const PortfolioPage: NextPage = () => {
