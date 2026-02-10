@@ -1,12 +1,9 @@
 // pages/resume.tsx
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import PageWrapper from '../components/layout/PageWrapper';
 import { portfolioData } from '../data/portfolioData';
 import { motion } from 'framer-motion';
-// Resume.js
 import React from 'react';
-
 import ResumePic from '../public/images/KumYewResume.jpg';
 import { FaDownload } from 'react-icons/fa';
 import Image from 'next/image';
@@ -27,22 +24,14 @@ const HomePage: NextPage = () => {
     
     <motion.section 
         id="resume"
-        className="w-full flex flex-col items-center py-20 px-5 md:px-20 bg-[#e1e5ea] text-[#333] font-sans"
+        className="w-full min-h-screen flex flex-col items-center py-20 px-5 bg-[#e1e5ea] text-[#333] font-sans"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
     >
       <PageWrapper>
-      {/* <motion.section 
-        id="resume" 
-        className="w-full flex flex-col items-center py-20 px-5 md:px-20 bg-[#e1e5ea] text-[#333] font-sans"
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: false }}
-        transition={{ duration: 1, delay: 0.1 }}
-        > */}
-            <h1 className="text-4xl font-semibold text-[#2d2d2d] m-10 text-center">
+            <h1 className="text-4xl font-semibold text-[#2d2d2d] mb-8 text-center">
                 Resume
             </h1>
             <div className="flex flex-col items-center p-6 w-full max-w-xl bg-white rounded-xl shadow-xl text-center">
@@ -51,7 +40,7 @@ const HomePage: NextPage = () => {
             src={ResumePic} 
             priority={true}
             alt="Kum Yew Resume" 
-            className="w-full max-w-xs sm:max-w-md mb-6 rounded-lg shadow-lg"
+            className="h-auto mb-8 rounded-lg shadow-md border border-gray-100"
             />
             <a 
             href="/KumYewResume.pdf" 

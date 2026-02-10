@@ -17,13 +17,13 @@ const PortfolioPage: NextPage = () => {
   return (
     <motion.section 
         id="portfolio"
-        className="w-full flex flex-col items-center py-20 px-5 md:px-20 text-[#333] font-sans"
+        className="w-full min-h-screen flex flex-col items-center py-20 px-5 text-[#333] font-sans"
     >
       
       <SEO metadata={metadata} />
       
       <PageWrapper>
-        <h1 className="text-4xl font-semibold text-[#2d2d2d] m-10 text-center">Projects</h1>
+        <h1 className="text-4xl font-semibold text-[#2d2d2d] mb-8 text-center">Projects</h1>
         <div className="space-y-12"> {/* Adds space between project cards */}
           {portfolioData.projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
