@@ -170,7 +170,7 @@ export const portfolioData: PortfolioData = {
   },
 
   contact: {
-    email: "lokekumyew@gmail.com",
+    email: "loke@lokesoftware.com",
     linkedin: "https://www.linkedin.com/in/kum-yew-loke-74a0b0205/",
     github: "https://github.com/auan369/",
     instagram: "https://www.instagram.com/lokey_ky/"
