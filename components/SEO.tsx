@@ -1,18 +1,20 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 export interface PageMetadata {
   title: string;
   description: string;
-  // For social media sharing (Open Graph)
   ogImage?: string; 
-  // You can add more specific tags if needed
   canonicalUrl?: string; 
 }
+
+// Set your new domain as the base
+const BASE_URL = 'https://www.lokesoftware.com';
 
 // --- Define your site-wide default metadata ---
 const defaultMetadata: Partial<PageMetadata> = {
   description: 'Principal Software Consultant and AI Systems Architect specializing in stabilizing legacy web platforms, building offline-first mobile architectures, and engineering enterprise SaaS solutions.',
-  ogImage: 'https://kyloke-portfolio.vercel.app/social-card.jpg',
+  ogImage: `${BASE_URL}/social-card.jpg`,
 };
 
 const SITE_NAME = 'Kum Yew Loke (Loki)';
@@ -22,11 +24,13 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({ metadata }) => {
+  const router = useRouter();
   // Merge page-specific metadata with site-wide defaults
   const finalMeta = { ...defaultMetadata, ...metadata };
 
   // Format the title: "Page Title | Site Name" or just "Site Name" for the homepage
   const title = finalMeta.title === SITE_NAME ? SITE_NAME : `${finalMeta.title} | ${SITE_NAME}`;
+  const canonical = finalMeta.canonicalUrl || `${BASE_URL}${router.asPath === '/' ? '' : router.asPath}`;
 
   return (
     <Head>
@@ -42,6 +46,7 @@ const SEO: React.FC<SEOProps> = ({ metadata }) => {
       
       {/* --- Open Graph / Facebook / Social Media --- */}
       <meta property="og:type" content="website" />
+      <meta property="og:url" content={canonical} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={finalMeta.description} />
       <meta property="og:site_name" content={SITE_NAME} />
@@ -54,7 +59,7 @@ const SEO: React.FC<SEOProps> = ({ metadata }) => {
       <meta name="twitter:image" content={finalMeta.ogImage} />
 
       {/* --- Optional: Canonical URL --- */}
-      {finalMeta.canonicalUrl && <link rel="canonical" href={finalMeta.canonicalUrl} />}
+      <link rel="canonical" href={canonical} />
     </Head>
   );
 };
