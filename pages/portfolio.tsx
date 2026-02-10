@@ -23,11 +23,13 @@ const PortfolioPage: NextPage = () => {
       <SEO metadata={metadata} />
       
       <PageWrapper>
-        <h1 className="text-4xl font-semibold text-[#2d2d2d] mb-8 text-center">Projects</h1>
-        <div className="space-y-12"> {/* Adds space between project cards */}
-          {portfolioData.projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+        <div className="w-full max-w-6xl">
+          <h1 className="text-4xl font-semibold text-[#2d2d2d] mb-8 text-center">Projects</h1>
+          <div className="flex flex-col gap-12"> 
+            {portfolioData.projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
         </div>
       </PageWrapper>
     </motion.section>
