@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
     try {
         const { data, error } = await resend.emails.send({
-            from: 'Contact Form <onboarding@resend.dev>',
+            from: 'Loke Software <loke@lokesoftware.com>',
             to: [toEmail],
             subject: `New Message from ${name} via Portfolio`,
             replyTo: email,
