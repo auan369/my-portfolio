@@ -10,6 +10,9 @@ const ContactForm: React.FC = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+
+  const [honeypot, setHoneypot] = useState("");
+
   // and an onSubmit handler to send the data.
   const handleSubmit = async(event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -18,6 +21,7 @@ const ContactForm: React.FC = () => {
         name: name,
         email: email,
         message: message,
+        company_website: honeypot,
     }
     try {
         const response = await fetch("/api/contact", {
@@ -50,6 +54,16 @@ const ContactForm: React.FC = () => {
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.5 }}
     >
+      <div className="hidden" aria-hidden="true">
+        <input
+          type="text"
+          name="company_website" // Use a name that sounds attractive to bots
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
       <div className="mb-6">
         <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
           Your Name
