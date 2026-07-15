@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { portfolioData } from '../data/portfolioData';
 import HeroSection from '../components/sections/HeroSection';
+import Testimonials from '../components/sections/Testimonials';
 import SEO from '../components/SEO';
 import { PageMetadata } from '../components/SEO'; // Import the type
 
@@ -20,8 +21,9 @@ const HomePage: NextPage = () => {
 
       {/* Step 3: Use the component and pass the required data as a prop */}
       <HeroSection owner={portfolioData.owner} />
+      <Testimonials testimonials={portfolioData.testimonials} />
 
-      {/* 
+      {/*
         This is where you would assemble the rest of your page:
         <AboutSection />
         <PortfolioSection featuredOnly={true} />

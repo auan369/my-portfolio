@@ -30,6 +30,7 @@ yarn-error.log*
 # Build artifacts
 /.next/
 /out/
+*.tsbuildinfo
 
 # Vercel deployment logs
 .vercel

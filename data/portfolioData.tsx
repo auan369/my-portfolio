@@ -28,6 +28,13 @@ export interface PortfolioItem {
   featured: boolean;
 }
 
+export interface Testimonial {
+  id: number;
+  quote: string;
+  name: string;
+  attribution: string;
+}
+
 export interface PortfolioData {
   projects: PortfolioItem[];
   owner: {
@@ -47,6 +54,7 @@ export interface PortfolioData {
   technologies: {
     [key: string]: string[];
   };
+  testimonials: Testimonial[];
   about: {
     background: string;
     skills: string;
@@ -183,6 +191,27 @@ export const portfolioData: PortfolioData = {
   },
 
   categories: ['All', 'Full Stack', 'Mobile', 'AI Integration', 'Research'],
+
+  testimonials: [
+    {
+      id: 0,
+      quote: "PLACEHOLDER: Loki stepped into a critical incident and had our platform stable within days. His communication throughout was clear and reassuring.",
+      name: "Placeholder Name",
+      attribution: "Placeholder Title, Placeholder Company"
+    },
+    {
+      id: 1,
+      quote: "PLACEHOLDER: The offline-first architecture he built just works, even in the field with no signal. Exactly what we needed.",
+      name: "Placeholder Name",
+      attribution: "Placeholder Title, Placeholder Company"
+    },
+    {
+      id: 2,
+      quote: "PLACEHOLDER: Fast, thorough, and easy to work with. Would bring him onto another project without hesitation.",
+      name: "Placeholder Name",
+      attribution: "Placeholder Title, Placeholder Company"
+    }
+  ],
 
   technologies: {
     "Architecture & Logic": [
