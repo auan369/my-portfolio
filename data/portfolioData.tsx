@@ -206,14 +206,14 @@ export const portfolioData: PortfolioData = {
     {
       id: 0,
       quote: "It works perfectly — the authentication, the extra notes, everything. Great to wrap up this part of the process.",
-      name: "Client",
+      name: "Individual Client",
       attribution: "Cross-Platform Mobile App"
     },
     {
       id: 1,
       quote: "Thank you for all the assistance and patience along the way — we'll keep testing to catch anything that pops up here and there, but it's such a relief to finally have this working. Thanks again, Loki!",
-      name: "Client",
-      attribution: "Web Development Engagement"
+      name: "Enterprise Client",
+      attribution: "Events Company, Custom Software"
     }
   ],
 
