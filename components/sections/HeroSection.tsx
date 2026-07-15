@@ -42,7 +42,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ owner }) => {
   return (
     <motion.section
       id="home"
-      className="min-h-screen flex flex-col justify-center items-center text-center p-5"
+      className="relative min-h-screen flex flex-col justify-center items-center text-center p-5"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -83,6 +83,28 @@ const HeroSection: React.FC<HeroSectionProps> = ({ owner }) => {
           Get in Touch
         </Link>
       </motion.div>
+
+      <motion.a
+        href="#testimonials"
+        variants={itemVariants}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-[#888] hover:text-[#333] transition-colors duration-300"
+        aria-label="Scroll to testimonials"
+      >
+        <motion.svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <path d="M12 5v14M19 12l-7 7-7-7" />
+        </motion.svg>
+      </motion.a>
     </motion.section>
   );
 };

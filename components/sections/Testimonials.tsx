@@ -8,7 +8,7 @@ interface TestimonialsProps {
 
 const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
   return (
-    <section className="w-full py-16 md:py-24 px-5 bg-white">
+    <section id="testimonials" className="w-full py-16 md:py-24 px-5 bg-white">
       <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-center mb-3">
         What clients say
       </h2>
