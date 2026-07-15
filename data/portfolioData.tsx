@@ -12,6 +12,7 @@ import promptImage from '../public/images/prompt.jpg';
 import sg60Image from '../public/images/sg60magicball.gif';
 import icsrImage from '../public/images/ICSR.jpg';
 import cginstrumentsImage from '../public/images/cg.gif';
+import uvPrintStationImage from '../public/images/uvPrintStation.png';
 // You should create/use abstract high-quality placeholders for the new "Consultancy" items
 import { StaticImageData } from 'next/image';
 
@@ -79,7 +80,12 @@ export const portfolioData: PortfolioData = {
       links: [{ label: 'Case Study (NDA)', icon: <FaLock/>, url: '' }],
       category: 'Full Stack',
       status: 'Ongoing',
-      featured: true
+      featured: true,
+      caseStudy: {
+        problem: "A venture-backed travel SaaS platform suffered a critical security event, exposing vulnerabilities across its legacy AWS infrastructure.",
+        approach: "Led a forensic audit, remediated the AWS Lambda/Cognito vulnerabilities, migrated to Node 20, and stood up automated CI/CD pipelines.",
+        result: "Restored the platform to 99.9% production uptime with a secure, stable foundation for rapid feature iteration."
+      }
     },
     {
       id: 1,
@@ -93,9 +99,9 @@ export const portfolioData: PortfolioData = {
       status: 'Completed',
       featured: true,
       caseStudy: {
-        problem: "Hexlabs needed a single platform that could run 100% offline for maximum reliability during live events, or fully online for flexibility — and needed to check in 400+ attendees across a two-day AI Engineer Event without downtime, plus give staff the ability to fix data issues and adjust settings per event without touching code.",
-        approach: "Built the 'Ultimate Hybrid' Live Operations Engine: an installable desktop app with a mode selector switching between an offline SQLite-backed local network and an online Supabase (PostgreSQL + RLS) cloud mode, QR scanning and instant PDF badge printing, and bulk Excel/CSV attendee import. Followed with an Administrative & Creative Suite adding a secure admin dashboard for multi-event management, per-event configuration toggles (search strictness for PDPA compliance, QR scanner on/off, staff-assisted vs. guest-facing kiosk modes), and a drag-and-drop visual badge editor with dynamic fields and QR codes.",
-        result: "Successfully ran registration for 400+ attendees across both days of the AI Engineer Event with smooth on-site QR scanning and badge printing, and gave Hexlabs staff a self-serve admin console to manage attendee issues and event configuration without developer involvement."
+        problem: "Hexlabs needed to check in 400+ attendees across a two-day event — offline-reliable, zero downtime, with staff able to fix issues on the fly.",
+        approach: "Built an installable desktop app switching between offline (SQLite) and online (Supabase) modes, with QR scanning, instant PDF badge printing, and an admin console for per-event configuration and a drag-and-drop badge editor.",
+        result: "Ran registration for 400+ attendees across both event days with zero downtime and a self-serve admin console for staff."
       }
     },
     {
@@ -110,9 +116,9 @@ export const portfolioData: PortfolioData = {
       status: 'Completed',
       featured: true,
       caseStudy: {
-        problem: "The original mobile-only app worked well as a static species encyclopedia, but gave the research team no non-technical way to manage growing species data and media, and gave users no way to save or organize their own sightings without compromising data privacy or inflating cloud storage costs.",
-        approach: "Built a Next.js/Supabase web command center (hosted on Vercel) with a real-time database dashboard, a drag-and-drop media pipeline that auto-resizes and compresses images by up to 80% and converts them to WebP/AVIF, a self-healing CSV importer that validates spreadsheet data before it hits the database, and a one-click 'publish' sync so offline-first mobile devices pick up updates as soon as they reconnect. Followed with a Phase 3 mobile release adding Supabase-backed authentication (email/password plus optional Google/Apple login) behind a lazy-auth flow — public browsing stays open, login triggers only on save — Row Level Security for private user data, a multi-list sightings manager, and sighting-first architecture letting one sighting belong to multiple lists without duplicating storage. An automated image pipeline compresses sighting photos to ~150KB, and users can export their data as CSV/Excel or a ZIP of their media.",
-        result: "Delivered a full-stack scientific data platform spanning mobile, web, and cloud — giving the research team a no-code content management system and giving users authenticated, privacy-protected personal sightings with efficient storage costs."
+        problem: "TJIRP's mobile-only encyclopedia had no way for the research team to manage growing species data, or for users to save their own sightings.",
+        approach: "Built a Next.js/Supabase web command center for data management (media compression, self-healing CSV import), then shipped mobile auth and a sightings engine with lazy-auth, RLS, and sighting-first storage.",
+        result: "A full-stack platform spanning mobile, web, and cloud — with no-code data management and privacy-protected personal sightings at low storage cost."
       }
     },
     {
@@ -125,7 +131,12 @@ export const portfolioData: PortfolioData = {
       links: [{ label: 'Technical Audit', icon: <FaFile/>, url: '#' }],
       category: 'AI Integration',
       status: 'Completed',
-      featured: true
+      featured: true,
+      caseStudy: {
+        problem: "An LLM-driven generation platform had unpredictable model behavior and inconsistent structured outputs.",
+        approach: "Audited the existing architecture, then engineered V2 prompt reasoning chains and structured output schemas to constrain model behavior.",
+        result: "Achieved 95%+ consistency in structured JSON outputs with minimal hallucinations."
+      }
     },
     {
       id: 4,
@@ -183,6 +194,23 @@ export const portfolioData: PortfolioData = {
       category: 'Research',
       status: 'Published',
       featured: false
+    },
+    {
+      id: 8,
+      title: "Hex Interactive UV Print Station | Full-Stack Developer",
+      description: "Architected a cloud-hosted 'design-to-print' kiosk platform for Hexlabs, letting event attendees design custom merchandise — mugs, phone cases, bottles — on tablet-mounted kiosks using a touch-friendly canvas editor, with a scan-to-upload mobile bridge for uploading personal photos without logging in. A background sync agent on the production PC automatically pulls finished, CMYK-ready designs from the cloud and feeds them straight into the UV printer's RIP software, while Hexlab staff manage events, assets, and templates through an integrated admin dashboard.",
+      techStack: ['Next.js', 'Supabase', 'Vercel', 'Node.js'],
+      image: uvPrintStationImage,
+      device: 'laptop',
+      links: [{ label: 'Print Platform Architecture', icon: <FaDatabase/>, url: '' }],
+      category: 'Full Stack',
+      status: 'Pending Sign-Off',
+      featured: true,
+      caseStudy: {
+        problem: "Hexlabs' original single-machine UV printing kiosk couldn't scale beyond one venue at a time.",
+        approach: "Built a cloud-hosted kiosk web app with a touch-friendly design editor and a scan-to-upload mobile bridge, plus a background sync agent that auto-feeds finished designs into the UV printer's RIP software.",
+        result: "A hardware-agnostic, multi-event platform running the same design experience across concurrent events on any tablet, with no manual file handling."
+      }
     }
   ],
 
