@@ -173,6 +173,56 @@ Full-site content/pages review requested after Phase 6 wrapped. Findings below, 
 
 ---
 
+### **Phase 6.2: Portfolio Content Accuracy Updates (2026-07-16)**
+
+Goal: bring three portfolio entries up to date with real project details supplied by the user (Hexlabs event work, and the bird app's new web platform + Phase 3 mobile release). All copy below is drafted and ready to drop into `data/portfolioData.tsx`, but flagged open questions need answers before implementing.
+
+**Open questions to resolve first:**
+
+*   [ ] Confirm real tech stack for the on-site scanning/tag-printing pipeline (Enterprise Event Registration Platform) — current `techStack` doesn't reflect this.
+*   [ ] Confirm tech stack, `status`, `featured`, `links` (public demo? NDA-style disabled link like other Hexlabs entry?), and `device` (`laptop` for admin dashboard, or also show attendee-facing kiosk view?) for the new UV Print Platform entry.
+*   [ ] Need a real screenshot/image asset for the new UV Print Platform entry — `PortfolioItem.image` is a required `StaticImageData` field, so this blocks adding the entry until an image exists in `public/images/`.
+*   [ ] Decide: keep the bird app as one unified portfolio entry (mobile + web), or split the new web data-management platform into its own entry? (Draft below assumes one unified entry, since it's the same client/product.)
+*   [ ] Confirm current `status` for the bird app entry — still `"In Progress"`, or has Phase 3 shipped?
+*   [ ] Confirm real tech stack for the new bird app web platform (e.g. Next.js? plain React? something else?) and the CSV/Excel import library used.
+
+**1. Update existing entry — "Enterprise Event Registration Platform" (`id: 1`)**
+
+*   [ ] Update `description` to reflect the real deployment:
+    > "Architected a greenfield multi-tenant event registration platform for Hexlabs, deployed live at the AI Engineer Event to manage registration for 400+ attendees across two days. Built on-site scanning and tag-printing pipelines, plus real-time admin tooling for staff to resolve attendee issues and push custom data updates mid-event, backed by local MySQL persistence for 100% offline reliability."
+*   [ ] Replace placeholder `caseStudy` copy with:
+    *   **problem:** "Hexlabs needed a registration system robust enough to run live at a two-day, 400+ attendee AI Engineer Event — with zero tolerance for downtime, on-site scanning and tag printing, and the ability for staff to resolve attendee issues or push data corrections in real time without disrupting the check-in queue."
+    *   **approach:** "Architected a greenfield multi-tenant SaaS platform with cross-platform Windows/Mac desktop apps backed by local MySQL for 100% offline reliability, integrated on-site scanning and tag-printing hardware directly into the registration flow, and built an admin console for staff to manage attendee issues and push live data updates during the event."
+    *   **result:** "Successfully ran registration for 400+ attendees across both days of the AI Engineer Event with zero downtime, smooth on-site scanning and tag printing, and real-time issue resolution via the admin console."
+*   [ ] Update `techStack` once tooling for scanning/printing is confirmed (open question above).
+
+**2. Add new entry — "Custom UV Print Experience Platform" (Hexlabs)**
+
+*   [ ] Add new `PortfolioItem` (next `id: 8`) once the blocking open questions (image, stack, status, links) are resolved:
+    *   **title:** "Custom UV Print Experience Platform | Hexlabs | Full-Stack Developer"
+    *   **description:** "Built a custom on-site UV printing platform for Hexlabs, letting event attendees design personalized merchandise in-browser — uploading photos and creating custom designs — before sending jobs directly to industrial UV printers. Paired with an admin dashboard for Hexlabs staff to manage the live print queue and configure printer settings in real time."
+    *   **category:** `'Full Stack'` (fits existing categories; revisit if a more specific category is wanted)
+    *   Everything else (`techStack`, `image`, `device`, `links`, `status`, `featured`) — pending open questions above.
+
+**3. Update existing entry — "Scientific Data App" (`id: 2`, the bird app)**
+
+*   [ ] Update `title` to reflect expanded scope: "Scientific Data Platform | Mobile & Web Systems Architect" (was "Mobile Systems Architect")
+*   [ ] Update `description`:
+    > "Expanded a high-performance React Native iOS application into a full-stack scientific data platform. Shipped a companion web platform for streamlined species data entry, including bulk CSV/Excel upload, and delivered a Phase 3 mobile release adding secure user accounts and a personal sightings engine — letting users log GPS-tagged sightings with photos, organize them into custom lists, and export their data — while an automated image-compression pipeline and sighting-first data architecture kept cloud storage costs low."
+*   [ ] Add `caseStudy` (currently has none — this entry would gain the Problem/Approach/Result treatment alongside the Event Registration Platform):
+    *   **problem:** "The existing mobile-only app worked well for browsing a species encyclopedia, but had no way for users to safely save and manage personal sightings, no non-technical path for the research team to bulk-manage species data, and tight constraints on cloud storage costs for media at scale."
+    *   **approach:** "Built a companion web platform for the team to enter and bulk-update species data via CSV/Excel import, and shipped a Phase 3 mobile release adding Supabase-backed authentication with a lazy-auth flow (public browsing stays open; login triggers only when saving data), Row Level Security for private user data, a multi-list sightings manager, and sighting-first architecture that lets one sighting belong to multiple lists without duplicating storage. An automated image pipeline compresses photos to ~150KB, and users can export their data as CSV/Excel or a media ZIP."
+    *   **result:** "Delivered a full-stack scientific data platform spanning mobile, web, and cloud — with authenticated personal sightings, efficient media storage costs, and non-technical bulk data management for the research team."
+*   [ ] Update `techStack` to add: `'Supabase Auth'`, `'Row Level Security'`, `'CSV/Excel Import'`, plus the web platform's stack once confirmed (open question above).
+*   [ ] Confirm/update `status` field (open question above).
+
+**4. After content changes land**
+
+*   [ ] Typecheck (`npx tsc --noEmit`) and visually verify `/portfolio` on desktop + mobile — confirm the two updated cards and the new UV Print Platform card render correctly and other cards are unaffected.
+*   [ ] Since this touches real client work (Hexlabs, and Michael's bird app), consider a quick confirmation pass with the user before merging, given the specificity of the numbers (400+ attendees, ~150KB compression target, etc.).
+
+---
+
 ### **Phase 7: Visual Redesign (after Phase 6)**
 
 Goal: move away from the current "cookie-cutter AI app" feel. Reference sites: benscott.dev, prashantsani.com — both break the generic hero → feature-cards → footer template rhythm in favor of a more personal/editorial layout with custom scroll-driven motion (e.g. GSAP-style animation) and distinct typographic personality.
