@@ -84,8 +84,8 @@ export const portfolioData: PortfolioData = {
     {
       id: 1,
       title: "Enterprise Event Registration Platform | Systems Architect",
-      description: "Architected a greenfield multi-tenant SaaS platform for large-scale enterprise events. Built cross-platform Windows and Mac applications featuring local MySQL persistence for 100% offline reliability. Engineered a custom web-to-hardware bridge for industrial UV Printing Kiosks, enabling real-time merchandise customization via mobile-to-web API interactions.",
-      techStack: ['Next.js', 'Supabase', 'Local MySQL', 'Node.js', 'Electron'],
+      description: "Architected Hexlabs' 'Ultimate Hybrid' event registration platform — a single installable desktop app that switches between a fully offline local-network mode (SQLite-backed, for maximum reliability) and an online Supabase-backed cloud mode. Deployed live at the AI Engineer Event to check in 400+ attendees across two days with QR scanning and instant PDF badge printing, backed by a secure admin console for real-time attendee management, per-event configuration (search logic, QR toggles, PDPA privacy modes), and a drag-and-drop visual badge editor.",
+      techStack: ['React', 'Electron', 'Node.js', 'Supabase (PostgreSQL/RLS)', 'SQLite'],
       image: eventRegImage,
       device: 'laptop',
       links: [{ label: 'System Architecture', icon: <FaDatabase/>, url: '' }],
@@ -93,22 +93,27 @@ export const portfolioData: PortfolioData = {
       status: 'Completed',
       featured: true,
       caseStudy: {
-        problem: "PLACEHOLDER: The client needed to run large-scale enterprise events with zero tolerance for downtime, but had no existing platform capable of handling offline registration, on-site merchandise customization, or multi-tenant event configuration.",
-        approach: "PLACEHOLDER: Architected a greenfield multi-tenant SaaS platform with cross-platform Windows and Mac desktop applications, backed by local MySQL persistence for 100% offline reliability, plus a custom web-to-hardware bridge connecting mobile devices to industrial UV printing kiosks in real time.",
-        result: "PLACEHOLDER: Delivered a production-ready system that ran flawlessly across multiple live enterprise events, with zero registration downtime and real-time merchandise customization on-site."
+        problem: "Hexlabs needed a single platform that could run 100% offline for maximum reliability during live events, or fully online for flexibility — and needed to check in 400+ attendees across a two-day AI Engineer Event without downtime, plus give staff the ability to fix data issues and adjust settings per event without touching code.",
+        approach: "Built the 'Ultimate Hybrid' Live Operations Engine: an installable desktop app with a mode selector switching between an offline SQLite-backed local network and an online Supabase (PostgreSQL + RLS) cloud mode, QR scanning and instant PDF badge printing, and bulk Excel/CSV attendee import. Followed with an Administrative & Creative Suite adding a secure admin dashboard for multi-event management, per-event configuration toggles (search strictness for PDPA compliance, QR scanner on/off, staff-assisted vs. guest-facing kiosk modes), and a drag-and-drop visual badge editor with dynamic fields and QR codes.",
+        result: "Successfully ran registration for 400+ attendees across both days of the AI Engineer Event with smooth on-site QR scanning and badge printing, and gave Hexlabs staff a self-serve admin console to manage attendee issues and event configuration without developer involvement."
       }
     },
     {
       id: 2,
-      title: "Scientific Data App | Mobile Systems Architect",
-      description: "Developed a high-performance React Native iOS application utilizing WatermelonDB and SQLite to provide a seamless 100% local-first user experience. Designed a custom synchronization engine to orchestrate the asynchronous transfer of large-scale media assets and complex relational records from a Supabase cloud backend.",
-      techStack: ['React Native (Expo)', 'WatermelonDB', 'SQLite', 'Supabase', 'TypeScript'],
+      title: "TJIRP Birding Platform | Mobile & Web Systems Architect",
+      description: "Expanded TJIRP — a React Native birding encyclopedia app — into a full-stack platform. Shipped a Next.js/Supabase web command center for the research team to manage species data, including a drag-and-drop media pipeline with automatic compression/format conversion and a self-healing CSV importer, then followed with a Phase 3 mobile release adding secure user accounts and a personal sightings engine — letting users log GPS-tagged sightings with photos, organize them into custom lists, and export their data — while an automated image pipeline and sighting-first architecture kept cloud storage costs low.",
+      techStack: ['React Native (Expo)', 'Next.js', 'WatermelonDB', 'SQLite', 'Supabase (Auth/Storage/RLS)', 'TypeScript'],
       image: birdAppImage,
       device: 'phone',
       links: [{ label: 'Offline Architecture', icon: <FaMobileAlt/>, url: '' }],
       category: 'Mobile',
-      status: 'In Progress',
-      featured: true
+      status: 'Completed',
+      featured: true,
+      caseStudy: {
+        problem: "The original mobile-only app worked well as a static species encyclopedia, but gave the research team no non-technical way to manage growing species data and media, and gave users no way to save or organize their own sightings without compromising data privacy or inflating cloud storage costs.",
+        approach: "Built a Next.js/Supabase web command center (hosted on Vercel) with a real-time database dashboard, a drag-and-drop media pipeline that auto-resizes and compresses images by up to 80% and converts them to WebP/AVIF, a self-healing CSV importer that validates spreadsheet data before it hits the database, and a one-click 'publish' sync so offline-first mobile devices pick up updates as soon as they reconnect. Followed with a Phase 3 mobile release adding Supabase-backed authentication (email/password plus optional Google/Apple login) behind a lazy-auth flow — public browsing stays open, login triggers only on save — Row Level Security for private user data, a multi-list sightings manager, and sighting-first architecture letting one sighting belong to multiple lists without duplicating storage. An automated image pipeline compresses sighting photos to ~150KB, and users can export their data as CSV/Excel or a ZIP of their media.",
+        result: "Delivered a full-stack scientific data platform spanning mobile, web, and cloud — giving the research team a no-code content management system and giving users authenticated, privacy-protected personal sightings with efficient storage costs."
+      }
     },
     {
       id: 3,
