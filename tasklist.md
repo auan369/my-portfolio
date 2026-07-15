@@ -124,12 +124,12 @@ Goal: turn portfolio visitors into client inquiries, without touching existing t
     *   [X] Test with `npm run dev` on mobile/desktop widths; verify link navigates to `/contact`.
     *   [X] Merge into `staging`.
 
-*   [ ] **`feature/testimonials`** — Reusable testimonials section
-    *   [ ] Add `Testimonial` interface (`id`, `quote`, `name`, `attribution`) + `testimonials: Testimonial[]` (3 placeholder entries) to `data/portfolioData.tsx`.
-    *   [ ] New `components/sections/Testimonials.tsx`: takes `testimonials` as a prop, renders a responsive grid of quote cards matching existing card styling; placeholder copy clearly marked.
-    *   [ ] `pages/index.tsx`: render `<Testimonials testimonials={portfolioData.testimonials} />` below `<HeroSection />`.
-    *   [ ] Test layout/spacing/responsiveness on homepage.
-    *   [ ] Merge into `staging`.
+*   [X] **`feature/testimonials`** — Reusable testimonials section
+    *   [X] Add `Testimonial` interface (`id`, `quote`, `name`, `attribution`) + `testimonials: Testimonial[]` (3 placeholder entries) to `data/portfolioData.tsx`.
+    *   [X] New `components/sections/Testimonials.tsx`: takes `testimonials` as a prop, renders a responsive grid of quote cards matching existing card styling; placeholder copy clearly marked.
+    *   [X] `pages/index.tsx`: render `<Testimonials testimonials={portfolioData.testimonials} />` below `<HeroSection />`.
+    *   [X] Test layout/spacing/responsiveness on homepage.
+    *   [X] Merge into `staging`.
 
 *   [SKIPPED] **`feature/contact-scheduling`** — Calendly scheduling link
     *   Rejected 2026-07-15: don't want a direct self-service scheduling link — it removes the ability to screen inquiries before a call gets booked. Keeping the contact form as the sole channel for now.
