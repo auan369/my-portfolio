@@ -9,14 +9,11 @@ interface TestimonialsProps {
 const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
   return (
     <section id="testimonials" className="w-full py-16 md:py-24 px-5 bg-white">
-      <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-center mb-3">
+      <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] text-center mb-10">
         What clients say
       </h2>
-      <p className="text-xs uppercase tracking-widest text-[#888] text-center mb-10">
-        Placeholder testimonials — to be replaced with real client quotes
-      </p>
 
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
         {testimonials.map((testimonial) => (
           <blockquote
             key={testimonial.id}

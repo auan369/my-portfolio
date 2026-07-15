@@ -205,21 +205,15 @@ export const portfolioData: PortfolioData = {
   testimonials: [
     {
       id: 0,
-      quote: "PLACEHOLDER: Loki stepped into a critical incident and had our platform stable within days. His communication throughout was clear and reassuring.",
-      name: "Placeholder Name",
-      attribution: "Placeholder Title, Placeholder Company"
+      quote: "It works perfectly — the authentication, the extra notes, everything. Great to wrap up this part of the process.",
+      name: "Client",
+      attribution: "Cross-Platform Mobile App"
     },
     {
       id: 1,
-      quote: "PLACEHOLDER: The offline-first architecture he built just works, even in the field with no signal. Exactly what we needed.",
-      name: "Placeholder Name",
-      attribution: "Placeholder Title, Placeholder Company"
-    },
-    {
-      id: 2,
-      quote: "PLACEHOLDER: Fast, thorough, and easy to work with. Would bring him onto another project without hesitation.",
-      name: "Placeholder Name",
-      attribution: "Placeholder Title, Placeholder Company"
+      quote: "Thank you for all the assistance and patience along the way — we'll keep testing to catch anything that pops up here and there, but it's such a relief to finally have this working. Thanks again, Loki!",
+      name: "Client",
+      attribution: "Web Development Engagement"
     }
   ],
 
