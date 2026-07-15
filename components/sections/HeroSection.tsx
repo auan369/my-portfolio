@@ -1,5 +1,6 @@
 // components/sections/HeroSection.tsx
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 // A simple interface for the data we expect.
@@ -7,6 +8,7 @@ import { motion } from 'framer-motion';
 interface OwnerData {
   nickname: string;
   description: string;
+  outcomes: string[];
 }
 
 // Define the props for our HeroSection component
@@ -58,6 +60,29 @@ const HeroSection: React.FC<HeroSectionProps> = ({ owner }) => {
       >
         {owner.description}
       </motion.p>
+
+      <motion.ul
+        variants={itemVariants}
+        className="flex flex-wrap justify-center gap-3 max-w-2xl mt-6"
+      >
+        {owner.outcomes.map((outcome) => (
+          <li
+            key={outcome}
+            className="bg-[#e6e9ef] rounded-md py-1.5 px-3 text-sm md:text-base text-[#333] shadow-md border border-gray-200"
+          >
+            {outcome}
+          </li>
+        ))}
+      </motion.ul>
+
+      <motion.div variants={itemVariants} className="mt-8">
+        <Link
+          href="/contact"
+          className="inline-block bg-[#333] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#444] transition-colors duration-300"
+        >
+          Get in Touch
+        </Link>
+      </motion.div>
     </motion.section>
   );
 };

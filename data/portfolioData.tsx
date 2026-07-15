@@ -35,6 +35,7 @@ export interface PortfolioData {
     nickname: string;
     title: string;
     description: string;
+    outcomes: string[];
   };
   contact: {
     email: string;
@@ -166,7 +167,12 @@ export const portfolioData: PortfolioData = {
     name: "Loke Kum Yew",
     nickname: "Loki",
     title: "Full-Stack Engineer & AI Systems Architect",
-    description: "Senior Technical Consultant specializing in stabilizing fragile web platforms, architecting local-first mobile solutions, and accelerating product velocity through AI-augmented workflows."
+    description: "Senior Technical Consultant specializing in stabilizing fragile web platforms, architecting local-first mobile solutions, and accelerating product velocity through AI-augmented workflows.",
+    outcomes: [
+      "Stabilizing fragile platforms",
+      "Offline-first mobile architecture",
+      "Multi-tenant SaaS builds"
+    ]
   },
 
   contact: {
