@@ -181,52 +181,41 @@ Goal: bring three portfolio entries up to date with real project details supplie
 
 *   [X] ~~Confirm real tech stack for the on-site scanning/tag-printing pipeline (Enterprise Event Registration Platform)~~ — RESOLVED from real spec sheets (`Q-2025-10-01-01` quotation + Phase 2 Functional Spec): installable desktop app (Windows/macOS) with offline (SQLite) / online (Supabase PostgreSQL+RLS) mode switch, QR scanning, PDF badge printing, React-based drag-and-drop Visual Badge Editor, Node.js offline sync server. Current data's `Local MySQL` was wrong (spec says SQLite), and the description incorrectly folded in UV-printing kiosk work that belongs to the separate project below.
 *   [X] ~~Confirm tech stack for the new UV Print Platform entry~~ — RESOLVED from real proposal doc (`Updated Proposal_Mar19_Hex Interactive UV Print Station.pdf`): real product name is **"Hex Interactive UV Print Station"**. Vercel-hosted web kiosk app + Supabase cloud backend (nested per-event buckets for stock images/fonts/user uploads) + a local Node.js "Print Bridge Agent" that polls Supabase and auto-feeds finished CMYK files into the UV printer's Photoprint RIP hot folder, plus a "scan-to-upload" mobile bridge (session UUIDs + QR codes, no login required).
-*   [ ] Confirm whether the Vercel-hosted frontend is literally **Next.js** or a different React setup — proposal only says "Web Application Frontend" hosted on Vercel, doesn't name the framework.
-*   [ ] Confirm current `status` for the UV Print Platform — proposal is dated March 19, 2026 with a 6–7 week estimated timeline, so it's likely `"Completed"` by now (today is mid-July 2026), but needs a direct confirmation rather than an inference from the proposal date.
-*   [ ] Confirm `featured`, `links` (proposed: NDA-style disabled link matching the Event Registration Platform's "System Architecture" treatment, since this is proprietary Hexlab infrastructure per the proposal), and `device` (`laptop` vs `phone` framing, depending on what the screenshot actually shows) for the new UV Print Platform entry.
-*   [ ] Need a real screenshot/image asset for the new UV Print Platform entry — `PortfolioItem.image` is a required `StaticImageData` field, so this blocks adding the entry until an image exists in `public/images/`.
+*   [X] ~~Confirm whether the Vercel-hosted frontend is literally Next.js~~ — CONFIRMED by user: yes, Next.js on Vercel.
+*   [X] ~~Confirm current `status` for the UV Print Platform~~ — CONFIRMED by user: `"Pending Sign-Off"` (delivered, awaiting final testing and client sign-off).
+*   [X] ~~Confirm `featured`, `links`, `device`~~ — CONFIRMED by user: `featured: true`; NDA-style disabled link (matching Event Registration Platform's "System Architecture" treatment); `device: 'laptop'` showing the kiosk's touch-canvas design editor mid-design (more visually distinctive than an admin table, and avoids the phone frame's notch styling looking wrong on a tablet screenshot).
+*   [ ] Still need a real screenshot/image asset for the new UV Print Platform entry — `PortfolioItem.image` is a required `StaticImageData` field, this is the only remaining blocker for adding this entry.
 *   [X] ~~Confirm real tech stack for the new bird app web platform~~ — RESOLVED from real signed SOWs (`TJIRP 2 Phase 2` + `TJIRP 2 Phase 3`): real product name **TJIRP**, client Michael Heyns. Web portal is Next.js on Vercel + Supabase (Auth/Storage/RLS); see full details in item 3 below.
-*   [ ] Confirm `status` for the bird app entry (proposing `"Completed"` — see item 3 below).
+*   [X] ~~Confirm `status` for the bird app entry~~ — CONFIRMED by user: `"Completed"`.
 
-**1. Update existing entry — "Enterprise Event Registration Platform" (`id: 1`)** — copy finalized, ready to implement
+**1. Update existing entry — "Enterprise Event Registration Platform" (`id: 1`)** — IMPLEMENTED
 
-*   [ ] Update `description`:
-    > "Architected Hexlabs' 'Ultimate Hybrid' event registration platform — a single installable desktop app that switches between a fully offline local-network mode (SQLite-backed, for maximum reliability) and an online Supabase-backed cloud mode. Deployed live at the AI Engineer Event to check in 400+ attendees across two days with QR scanning and instant PDF badge printing, backed by a secure admin console for real-time attendee management, per-event configuration (search logic, QR toggles, PDPA privacy modes), and a drag-and-drop visual badge editor."
-*   [ ] Replace placeholder `caseStudy` copy with:
-    *   **problem:** "Hexlabs needed a single platform that could run 100% offline for maximum reliability during live events, or fully online for flexibility — and needed to check in 400+ attendees across a two-day AI Engineer Event without downtime, plus give staff the ability to fix data issues and adjust settings per event without touching code."
-    *   **approach:** "Built the 'Ultimate Hybrid' Live Operations Engine: an installable desktop app with a mode selector switching between an offline SQLite-backed local network and an online Supabase (PostgreSQL + RLS) cloud mode, QR scanning and instant PDF badge printing, and bulk Excel/CSV attendee import. Followed with an Administrative & Creative Suite adding a secure admin dashboard for multi-event management, per-event configuration toggles (search strictness for PDPA compliance, QR scanner on/off, staff-assisted vs. guest-facing kiosk modes), and a drag-and-drop visual badge editor with dynamic fields and QR codes."
-    *   **result:** "Successfully ran registration for 400+ attendees across both days of the AI Engineer Event with smooth on-site QR scanning and badge printing, and gave Hexlabs staff a self-serve admin console to manage attendee issues and event configuration without developer involvement."
-*   [ ] Update `techStack` to `['React', 'Electron', 'Node.js', 'Supabase (PostgreSQL/RLS)', 'SQLite']` (drops incorrect `Next.js` and `Local MySQL`).
+*   [X] Updated `description`, `caseStudy` (problem/approach/result), and `techStack` to `['React', 'Electron', 'Node.js', 'Supabase (PostgreSQL/RLS)', 'SQLite']` per the finalized copy. Typechecked and visually verified on `/portfolio`.
 
-**2. Add new entry — "Hex Interactive UV Print Station" (Hexlabs)**
+**2. Add new entry — "Hex Interactive UV Print Station" (Hexlabs)** — blocked only on the screenshot asset
 
-*   [ ] Add new `PortfolioItem` (next `id: 8`) once the remaining blocking open questions (image, framework confirmation, status, links, device) are resolved:
-    *   **title:** "Hex Interactive UV Print Station | Full-Stack Developer" (using the real product name from the proposal doc, matching the site's existing `Project Name | Role` title convention)
+*   [ ] Add new `PortfolioItem` (next `id: 8`) once the screenshot exists in `public/images/`:
+    *   **title:** "Hex Interactive UV Print Station | Full-Stack Developer"
     *   **description:** "Architected a cloud-hosted 'design-to-print' kiosk platform for Hexlabs, letting event attendees design custom merchandise — mugs, phone cases, bottles — on tablet-mounted kiosks using a touch-friendly canvas editor, with a scan-to-upload mobile bridge for uploading personal photos without logging in. A background sync agent on the production PC automatically pulls finished, CMYK-ready designs from the cloud and feeds them straight into the UV printer's RIP software, while Hexlab staff manage events, assets, and templates through an integrated admin dashboard."
     *   **caseStudy.problem:** "Hexlabs' original single-machine UV printing kiosk couldn't scale beyond one venue at a time. They needed a multi-event platform where staff could deploy the same experience across multiple tablets and locations, with attendee-generated designs flowing automatically into their UV printer without manual file handling."
     *   **caseStudy.approach:** "Built a cloud-hosted kiosk web app (Vercel) backed by Supabase, with a touch-friendly visual editor supporting text, stickers, drawings, and photo uploads across configurable product templates (mugs, phone cases, bottles). Added a 'scan-to-upload' mobile bridge so attendees can send photos from their own phones into their kiosk session without logging in, and a lightweight background sync agent that automatically polls for finished designs and drops CMYK-ready files straight into the UV printer's Photoprint RIP hot folder."
     *   **caseStudy.result:** "Delivered a hardware-agnostic, multi-event platform that lets Hexlabs run the same interactive design experience across concurrent events on any tablet, with designs flowing from attendee upload to print-ready file with no manual intervention."
-    *   **techStack:** `['Next.js', 'Supabase', 'Vercel', 'Node.js']` — pending confirmation of the exact frontend framework (open question above).
-    *   **category:** `'Full Stack'` (fits existing categories; revisit if a more specific category is wanted)
-    *   Everything else (`image`, `device`, `links`, `status`, `featured`) — pending open questions above.
+    *   **techStack:** `['Next.js', 'Supabase', 'Vercel', 'Node.js']`
+    *   **device:** `'laptop'`
+    *   **links:** `[{ label: 'Print Platform Architecture', icon: <FaDatabase/>, url: '' }]` (disabled NDA-style treatment, matching the Event Registration Platform card)
+    *   **category:** `'Full Stack'`
+    *   **status:** `'Pending Sign-Off'`
+    *   **featured:** `true`
+    *   **image:** BLOCKED — needs a real screenshot of the kiosk's touch-canvas design editor (mid-design, showing photo/sticker/text elements) added to `public/images/` and imported in `data/portfolioData.tsx`.
 
-**3. Update existing entry — "Scientific Data App" (`id: 2`, the bird app)** — real product name confirmed: **TJIRP** (client: Michael Heyns), from two signed Statements of Work (`TJIRP 2 Phase 2` web portal, dated 2026-03-24; `TJIRP 2 Phase 3` mobile auth/sightings, dated 2026-05-14). Copy finalized below.
+**3. Update existing entry — "Scientific Data App" (`id: 2`, the bird app)** — IMPLEMENTED
 
-*   [ ] Update `title`: "TJIRP Birding Platform | Mobile & Web Systems Architect" (was "Scientific Data App | Mobile Systems Architect" — now using the real product name and reflecting the expanded web scope)
-*   [ ] Update `description`:
-    > "Expanded TJIRP — a React Native birding encyclopedia app — into a full-stack platform. Shipped a Next.js/Supabase web command center for the research team to manage species data, including a drag-and-drop media pipeline with automatic compression/format conversion and a self-healing CSV importer, then followed with a Phase 3 mobile release adding secure user accounts and a personal sightings engine — letting users log GPS-tagged sightings with photos, organize them into custom lists, and export their data — while an automated image pipeline and sighting-first architecture kept cloud storage costs low."
-*   [ ] Add `caseStudy` (currently has none):
-    *   **problem:** "The original mobile-only app worked well as a static species encyclopedia, but gave the research team no non-technical way to manage growing species data and media, and gave users no way to save or organize their own sightings without compromising data privacy or inflating cloud storage costs."
-    *   **approach:** "Built a Next.js/Supabase web command center (hosted on Vercel) with a real-time database dashboard, a drag-and-drop media pipeline that auto-resizes and compresses images by up to 80% and converts them to WebP/AVIF, a self-healing CSV importer that validates spreadsheet data before it hits the database, and a one-click 'publish' sync so offline-first mobile devices pick up updates as soon as they reconnect. Followed with a Phase 3 mobile release adding Supabase-backed authentication (email/password plus optional Google/Apple login) behind a lazy-auth flow — public browsing stays open, login triggers only on save — Row Level Security for private user data, a multi-list sightings manager, and sighting-first architecture letting one sighting belong to multiple lists without duplicating storage. An automated image pipeline compresses sighting photos to ~150KB, and users can export their data as CSV/Excel or a ZIP of their media."
-    *   **result:** "Delivered a full-stack scientific data platform spanning mobile, web, and cloud — giving the research team a no-code content management system and giving users authenticated, privacy-protected personal sightings with efficient storage costs."
-*   [ ] Update `techStack` to `['React Native (Expo)', 'Next.js', 'WatermelonDB', 'SQLite', 'Supabase (Auth/Storage/RLS)', 'TypeScript']` (adds the now-confirmed web stack: Next.js on Vercel, Supabase Auth/Storage/RLS).
-*   [ ] `status`: both SOWs are signed and dated well within a completed timeline relative to today (Phase 2: 2026-03-24; Phase 3: 2026-05-14, 3–4 week estimate) — proposing `"Completed"`, but flagging for a quick confirmation rather than assuming.
-*   [X] ~~Decide: split into two entries?~~ — keeping as one unified entry (same client/product), per original draft assumption.
+*   [X] Updated `title` to "TJIRP Birding Platform | Mobile & Web Systems Architect", `description`, added `caseStudy`, updated `techStack` to `['React Native (Expo)', 'Next.js', 'WatermelonDB', 'SQLite', 'Supabase (Auth/Storage/RLS)', 'TypeScript']`, and set `status: 'Completed'`. Typechecked and visually verified on `/portfolio`.
 
 **4. After content changes land**
 
-*   [ ] Typecheck (`npx tsc --noEmit`) and visually verify `/portfolio` on desktop + mobile — confirm the two updated cards and the new UV Print Platform card render correctly and other cards are unaffected.
-*   [ ] Since this touches real client work (Hexlabs, and Michael's bird app), consider a quick confirmation pass with the user before merging, given the specificity of the numbers (400+ attendees, ~150KB compression target, etc.).
+*   [X] Typechecked (`npx tsc --noEmit`) and visually verified `/portfolio` on desktop for items 1 and 3 — both render correctly, other cards unaffected.
+*   [ ] Item 2 (UV Print Platform) still pending the screenshot asset before it can be added and verified the same way.
 
 ---
 
