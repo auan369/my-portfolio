@@ -113,16 +113,16 @@
 
 Goal: turn portfolio visitors into client inquiries, without touching existing typography, colors, or brand voice. All work happens off a `staging` branch; each feature gets its own branch, is implemented + tested, then merged locally into `staging` (nothing pushed until reviewed).
 
-*   [ ] **Setup**
+*   [X] **Setup**
     ```bash
     git checkout -b staging
     ```
 
-*   [ ] **`feature/hero-cta`** — Homepage hero CTA + outcomes line
-    *   [ ] Add `owner.outcomes: string[]` to `data/portfolioData.tsx` (stabilizing fragile platforms, offline-first mobile architecture, multi-tenant SaaS builds).
-    *   [ ] `components/sections/HeroSection.tsx`: render outcomes under the description; add primary CTA `<Link href="/contact">Book a Consultation</Link>` styled like existing `#333` filled buttons.
-    *   [ ] Test with `npm run dev` on mobile/desktop widths; verify link navigates to `/contact`.
-    *   [ ] Merge into `staging`.
+*   [X] **`feature/hero-cta`** — Homepage hero CTA + outcomes line
+    *   [X] Add `owner.outcomes: string[]` to `data/portfolioData.tsx` (stabilizing fragile platforms, offline-first mobile architecture, multi-tenant SaaS builds).
+    *   [X] `components/sections/HeroSection.tsx`: render outcomes under the description; add primary CTA `<Link href="/contact">Get in Touch</Link>` styled like existing `#333` filled buttons.
+    *   [X] Test with `npm run dev` on mobile/desktop widths; verify link navigates to `/contact`.
+    *   [X] Merge into `staging`.
 
 *   [ ] **`feature/testimonials`** — Reusable testimonials section
     *   [ ] Add `Testimonial` interface (`id`, `quote`, `name`, `attribution`) + `testimonials: Testimonial[]` (3 placeholder entries) to `data/portfolioData.tsx`.
