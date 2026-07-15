@@ -106,3 +106,60 @@
 *   [ ] **Merge to Production:** Once you are fully satisfied with the preview, merge the `nextjs-migration` branch into your `main` branch. Vercel will automatically build and deploy the changes to your live domain.
 
 *   [ ] **Celebrate!** You've successfully upgraded your site.
+
+---
+
+### **Phase 6: Conversion-Focused Improvements (Freelance Inquiries)**
+
+Goal: turn portfolio visitors into client inquiries, without touching existing typography, colors, or brand voice. All work happens off a `staging` branch; each feature gets its own branch, is implemented + tested, then merged locally into `staging` (nothing pushed until reviewed).
+
+*   [ ] **Setup**
+    ```bash
+    git checkout -b staging
+    ```
+
+*   [ ] **`feature/hero-cta`** — Homepage hero CTA + outcomes line
+    *   [ ] Add `owner.outcomes: string[]` to `data/portfolioData.tsx` (stabilizing fragile platforms, offline-first mobile architecture, multi-tenant SaaS builds).
+    *   [ ] `components/sections/HeroSection.tsx`: render outcomes under the description; add primary CTA `<Link href="/contact">Book a Consultation</Link>` styled like existing `#333` filled buttons.
+    *   [ ] Test with `npm run dev` on mobile/desktop widths; verify link navigates to `/contact`.
+    *   [ ] Merge into `staging`.
+
+*   [ ] **`feature/testimonials`** — Reusable testimonials section
+    *   [ ] Add `Testimonial` interface (`id`, `quote`, `name`, `attribution`) + `testimonials: Testimonial[]` (3 placeholder entries) to `data/portfolioData.tsx`.
+    *   [ ] New `components/sections/Testimonials.tsx`: takes `testimonials` as a prop, renders a responsive grid of quote cards matching existing card styling; placeholder copy clearly marked.
+    *   [ ] `pages/index.tsx`: render `<Testimonials testimonials={portfolioData.testimonials} />` below `<HeroSection />`.
+    *   [ ] Test layout/spacing/responsiveness on homepage.
+    *   [ ] Merge into `staging`.
+
+*   [SKIPPED] **`feature/contact-scheduling`** — Calendly scheduling link
+    *   Rejected 2026-07-15: don't want a direct self-service scheduling link — it removes the ability to screen inquiries before a call gets booked. Keeping the contact form as the sole channel for now.
+    *   ~~Document `NEXT_PUBLIC_CALENDLY_URL` in CLAUDE.md's Environment Variables section (client-side var, needs `NEXT_PUBLIC_` prefix).~~
+    *   ~~`pages/contact.tsx`: add a "Book a time directly" CTA above/alongside `<ContactForm />`, linking to `process.env.NEXT_PUBLIC_CALENDLY_URL` (falls back to placeholder if unset).~~
+    *   ~~Test that the page doesn't break with the env var unset.~~
+    *   ~~Merge into `staging`.~~
+
+*   [ ] **`feature/case-study-depth`** — Expanded case study (Enterprise Event Registration Platform)
+    *   [ ] Add optional `caseStudy?: { problem: string; approach: string; result: string }` to `PortfolioItem` in `data/portfolioData.tsx`; populate placeholder copy on the Enterprise Event Registration Platform entry only.
+    *   [ ] `components/ProjectCard.tsx`: when `caseStudy` is present, render Problem → Approach → Result subsections instead of the plain description; other cards' layout untouched.
+    *   [ ] Test `/portfolio` — expanded card renders correctly, other cards unaffected, responsive check.
+    *   [ ] Merge into `staging`.
+
+*   [ ] **Wrap-up:** review `staging` locally; decide when to push/merge into `main`.
+
+---
+
+### **Phase 7: Visual Redesign (after Phase 6)**
+
+Goal: move away from the current "cookie-cutter AI app" feel. Reference sites: benscott.dev, prashantsani.com — both break the generic hero → feature-cards → footer template rhythm in favor of a more personal/editorial layout with custom scroll-driven motion (e.g. GSAP-style animation) and distinct typographic personality.
+
+Priorities called out 2026-07-15, roughly in order:
+1.  Generic layout rhythm — move away from predictable hero/cards/footer block structure.
+2.  Lack of motion/personality — site feels static; wants scroll animation, transitions, more character in interactions.
+3.  Mobile optimization — current layout isn't well optimized for mobile.
+
+Sequencing: deliberately deferred until Phase 6 (`feature/hero-cta`, `feature/testimonials`, `feature/contact-scheduling` [skipped], `feature/case-study-depth`) is merged into `staging`, so the new conversion-focused content/sections exist before the layout around them is reworked.
+
+*   [ ] Revisit reference sites for concrete direction (typography, color, motion library choice) once Phase 6 is done.
+*   [ ] Scope which pages/sections are in play (homepage hero, portfolio grid, about, nav) vs. left alone.
+*   [ ] Decide on animation approach (Framer Motion is already a dependency via `_app.tsx` page transitions — likely reuse rather than add GSAP).
+*   [ ] Mobile-first pass on whichever layout is chosen.
