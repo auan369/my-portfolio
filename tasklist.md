@@ -148,34 +148,34 @@ Goal: turn portfolio visitors into client inquiries, without touching existing t
 
 ---
 
-### **Phase 6.1: Site Audit Findings (2026-07-16)**
+### **Phase 6.1: Site Audit Findings (2026-07-16)** — IMPLEMENTED 2026-07-16
 
-Full-site content/pages review requested after Phase 6 wrapped. Findings below, not yet actioned — decide per item whether to fix now or fold into Phase 7.
+Full-site content/pages review requested after Phase 6 wrapped. All items below implemented, typechecked, linted, and visually verified.
 
 **Concrete bugs (low-risk, high-value; can be fixed independent of the redesign):**
 
-*   [ ] `next-sitemap.config.js` — `siteUrl` is hardcoded to `https://kyloke-portfolio.vercel.app/` instead of the real domain. Every `npm run build` regenerates `sitemap.xml`/`robots.txt` pointing at the Vercel placeholder. Committed `public/robots.txt` currently has the correct URL by luck (manual edit) but is one build+commit away from being overwritten with the wrong domain.
-*   [ ] `pages/index.tsx` — homepage `<title>` metadata already includes `"| Loke Software"`, and `SEO.tsx` automatically appends `"| Kum Yew Loke (Loki)"` on top, producing a double-branded title (`"...| Loke Software | Kum Yew Loke (Loki)"`). Every other page avoids this; homepage title should drop the manual `"| Loke Software"` suffix.
-*   [ ] `data/portfolioData.tsx` — `owner.title` ("Full-Stack Engineer & AI Systems Architect") is defined but never rendered anywhere on-page, only used inside raw metadata strings. Consider surfacing it as a subtitle in `HeroSection.tsx`.
-*   [ ] `components/NavBar.tsx` — owner name is hardcoded as `"Kum Yew Loke"` instead of reading `portfolioData.owner.name`, breaking the single-source-of-truth content pattern.
-*   [ ] `public/index.html` — leftover CRA template file. Phase 1 tasklist marked "Delete the old public/index.html" as done, but the file is still present.
+*   [X] `next-sitemap.config.js` — fixed `siteUrl` from the `kyloke-portfolio.vercel.app` placeholder to `https://www.lokesoftware.com`. Verified via production build: sitemap/robots.txt now regenerate with the correct domain.
+*   [X] `pages/index.tsx` — dropped the manual `"| Loke Software"` suffix from the homepage title metadata, removing the double-branding with `SEO.tsx`'s automatic site-name suffix.
+*   [X] `data/portfolioData.tsx` / `HeroSection.tsx` — `owner.title` now renders as a subtitle under the hero name.
+*   [X] `components/NavBar.tsx` — now reads `portfolioData.owner.name` instead of a hardcoded string (this also fixed a real mismatch: NavBar said "Kum Yew Loke", Footer already said "Loke Kum Yew" from data — both now consistent).
+*   [X] `public/index.html` — deleted.
 
 **Content / conversion gaps:**
 
-*   [ ] Case study depth (`caseStudy` Problem/Approach/Result) only exists on 1 of 8 projects (Enterprise Event Registration Platform), by original Phase 6 design (scoped as a pilot). Consider extending to the other `featured: true` projects (Travel SaaS, Scientific Data App, AI Generation Platform).
-*   [ ] `/about`, `/portfolio`, and `/resume` are dead ends — only the homepage hero has a "Get in Touch" CTA. No obvious next step after reading case studies or the resume.
-*   [ ] About page's `openToWork` copy invites contact but is plain text, not a link/button.
+*   [X] Extended `caseStudy` (Problem/Approach/Result) to the two remaining featured projects without one — Travel SaaS (NDA-safe copy, no new specifics) and AI Generation Platform. Also tightened all four case studies (including the two from Phase 6.2) to short, scannable sentences per the user's follow-up feedback — first drafts were too dense.
+*   [X] Added a reusable `components/ui/CTABanner.tsx`, wired into `/about`, `/portfolio`, and `/resume` — each previously dead-ended with no path to `/contact`.
+*   [X] About page's `openToWork` copy — resolved via the new CTABanner directly below it on the page, rather than adding a redundant inline link inside the paragraph itself.
 
 **Low-priority tech debt:**
 
-*   [ ] `package.json` — `react-router-dom` and `web-vitals` are still listed as dependencies; confirmed unused anywhere in the codebase (CRA leftovers), safe to remove.
-*   [ ] `package.json` — `eslint-config-next` pinned to `14.2.3` while `next` itself is `15.5.9`; version skew may mean stale lint rules.
+*   [X] Removed unused `react-router-dom` and `web-vitals` from `package.json`.
+*   [X] Bumped `eslint-config-next` from `14.2.3` to `15.5.9` to match `next`. `npm run lint` passes clean.
 
 ---
 
-### **Phase 6.2: Portfolio Content Accuracy Updates (2026-07-16)**
+### **Phase 6.2: Portfolio Content Accuracy Updates (2026-07-16)** — IMPLEMENTED 2026-07-16
 
-Goal: bring three portfolio entries up to date with real project details supplied by the user (Hexlabs event work, and the bird app's new web platform + Phase 3 mobile release). All copy below is drafted and ready to drop into `data/portfolioData.tsx`, but flagged open questions need answers before implementing.
+Goal: bring three portfolio entries up to date with real project details supplied by the user (Hexlabs event work, and the bird app's new web platform + Phase 3 mobile release). All three items implemented; the new UV Print Platform entry uses an abstract placeholder mockup image (`public/images/uvPrintStation.png`) pending a real screenshot — swap the import in `data/portfolioData.tsx` when one's available.
 
 **Open questions to resolve first:**
 
@@ -184,7 +184,7 @@ Goal: bring three portfolio entries up to date with real project details supplie
 *   [X] ~~Confirm whether the Vercel-hosted frontend is literally Next.js~~ — CONFIRMED by user: yes, Next.js on Vercel.
 *   [X] ~~Confirm current `status` for the UV Print Platform~~ — CONFIRMED by user: `"Pending Sign-Off"` (delivered, awaiting final testing and client sign-off).
 *   [X] ~~Confirm `featured`, `links`, `device`~~ — CONFIRMED by user: `featured: true`; NDA-style disabled link (matching Event Registration Platform's "System Architecture" treatment); `device: 'laptop'` showing the kiosk's touch-canvas design editor mid-design (more visually distinctive than an admin table, and avoids the phone frame's notch styling looking wrong on a tablet screenshot).
-*   [ ] Still need a real screenshot/image asset for the new UV Print Platform entry — `PortfolioItem.image` is a required `StaticImageData` field, this is the only remaining blocker for adding this entry.
+*   [X] ~~Still need a real screenshot/image asset~~ — using a generated abstract placeholder mockup (`public/images/uvPrintStation.png`, no visible "placeholder" text) per user's instruction; swap for a real screenshot when available.
 *   [X] ~~Confirm real tech stack for the new bird app web platform~~ — RESOLVED from real signed SOWs (`TJIRP 2 Phase 2` + `TJIRP 2 Phase 3`): real product name **TJIRP**, client Michael Heyns. Web portal is Next.js on Vercel + Supabase (Auth/Storage/RLS); see full details in item 3 below.
 *   [X] ~~Confirm `status` for the bird app entry~~ — CONFIRMED by user: `"Completed"`.
 
@@ -192,30 +192,17 @@ Goal: bring three portfolio entries up to date with real project details supplie
 
 *   [X] Updated `description`, `caseStudy` (problem/approach/result), and `techStack` to `['React', 'Electron', 'Node.js', 'Supabase (PostgreSQL/RLS)', 'SQLite']` per the finalized copy. Typechecked and visually verified on `/portfolio`.
 
-**2. Add new entry — "Hex Interactive UV Print Station" (Hexlabs)** — blocked only on the screenshot asset
+**2. Add new entry — "Hex Interactive UV Print Station" (Hexlabs)** — IMPLEMENTED (`id: 8`)
 
-*   [ ] Add new `PortfolioItem` (next `id: 8`) once the screenshot exists in `public/images/`:
-    *   **title:** "Hex Interactive UV Print Station | Full-Stack Developer"
-    *   **description:** "Architected a cloud-hosted 'design-to-print' kiosk platform for Hexlabs, letting event attendees design custom merchandise — mugs, phone cases, bottles — on tablet-mounted kiosks using a touch-friendly canvas editor, with a scan-to-upload mobile bridge for uploading personal photos without logging in. A background sync agent on the production PC automatically pulls finished, CMYK-ready designs from the cloud and feeds them straight into the UV printer's RIP software, while Hexlab staff manage events, assets, and templates through an integrated admin dashboard."
-    *   **caseStudy.problem:** "Hexlabs' original single-machine UV printing kiosk couldn't scale beyond one venue at a time. They needed a multi-event platform where staff could deploy the same experience across multiple tablets and locations, with attendee-generated designs flowing automatically into their UV printer without manual file handling."
-    *   **caseStudy.approach:** "Built a cloud-hosted kiosk web app (Vercel) backed by Supabase, with a touch-friendly visual editor supporting text, stickers, drawings, and photo uploads across configurable product templates (mugs, phone cases, bottles). Added a 'scan-to-upload' mobile bridge so attendees can send photos from their own phones into their kiosk session without logging in, and a lightweight background sync agent that automatically polls for finished designs and drops CMYK-ready files straight into the UV printer's Photoprint RIP hot folder."
-    *   **caseStudy.result:** "Delivered a hardware-agnostic, multi-event platform that lets Hexlabs run the same interactive design experience across concurrent events on any tablet, with designs flowing from attendee upload to print-ready file with no manual intervention."
-    *   **techStack:** `['Next.js', 'Supabase', 'Vercel', 'Node.js']`
-    *   **device:** `'laptop'`
-    *   **links:** `[{ label: 'Print Platform Architecture', icon: <FaDatabase/>, url: '' }]` (disabled NDA-style treatment, matching the Event Registration Platform card)
-    *   **category:** `'Full Stack'`
-    *   **status:** `'Pending Sign-Off'`
-    *   **featured:** `true`
-    *   **image:** BLOCKED — needs a real screenshot of the kiosk's touch-canvas design editor (mid-design, showing photo/sticker/text elements) added to `public/images/` and imported in `data/portfolioData.tsx`.
+*   [X] Added with the finalized copy (title, description, tightened case study, `techStack: ['Next.js', 'Supabase', 'Vercel', 'Node.js']`, `device: 'laptop'`, disabled NDA-style "Print Platform Architecture" link, `category: 'Full Stack'`, `status: 'Pending Sign-Off'`, `featured: true`), using the placeholder mockup image noted above. Typechecked and visually verified on `/portfolio` (confirmed the image loads correctly — an initial full-page screenshot showed it black, which turned out to be a Next.js Image lazy-load timing artifact in the screenshot capture, not a real bug).
 
 **3. Update existing entry — "Scientific Data App" (`id: 2`, the bird app)** — IMPLEMENTED
 
-*   [X] Updated `title` to "TJIRP Birding Platform | Mobile & Web Systems Architect", `description`, added `caseStudy`, updated `techStack` to `['React Native (Expo)', 'Next.js', 'WatermelonDB', 'SQLite', 'Supabase (Auth/Storage/RLS)', 'TypeScript']`, and set `status: 'Completed'`. Typechecked and visually verified on `/portfolio`.
+*   [X] Updated `title` to "TJIRP Birding Platform | Mobile & Web Systems Architect", `description`, added a tightened `caseStudy`, updated `techStack` to `['React Native (Expo)', 'Next.js', 'WatermelonDB', 'SQLite', 'Supabase (Auth/Storage/RLS)', 'TypeScript']`, and set `status: 'Completed'`. Typechecked and visually verified on `/portfolio`.
 
 **4. After content changes land**
 
-*   [X] Typechecked (`npx tsc --noEmit`) and visually verified `/portfolio` on desktop for items 1 and 3 — both render correctly, other cards unaffected.
-*   [ ] Item 2 (UV Print Platform) still pending the screenshot asset before it can be added and verified the same way.
+*   [X] Typechecked (`npx tsc --noEmit`), linted (`npm run lint`), and ran a full production build (`npm run build`) — all clean. Visually verified all three items on `/portfolio` (desktop), plus the wider Phase 6.1 changes (hero subtitle, nav name, CTA banners on `/about` `/portfolio` `/resume`) with no console errors.
 
 ---
 
