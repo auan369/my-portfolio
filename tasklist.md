@@ -138,11 +138,11 @@ Goal: turn portfolio visitors into client inquiries, without touching existing t
     *   ~~Test that the page doesn't break with the env var unset.~~
     *   ~~Merge into `staging`.~~
 
-*   [ ] **`feature/case-study-depth`** — Expanded case study (Enterprise Event Registration Platform)
-    *   [ ] Add optional `caseStudy?: { problem: string; approach: string; result: string }` to `PortfolioItem` in `data/portfolioData.tsx`; populate placeholder copy on the Enterprise Event Registration Platform entry only.
-    *   [ ] `components/ProjectCard.tsx`: when `caseStudy` is present, render Problem → Approach → Result subsections instead of the plain description; other cards' layout untouched.
-    *   [ ] Test `/portfolio` — expanded card renders correctly, other cards unaffected, responsive check.
-    *   [ ] Merge into `staging`.
+*   [X] **`feature/case-study-depth`** — Expanded case study (Enterprise Event Registration Platform)
+    *   [X] Add optional `caseStudy?: { problem: string; approach: string; result: string }` to `PortfolioItem` in `data/portfolioData.tsx`; populate placeholder copy on the Enterprise Event Registration Platform entry only.
+    *   [X] `components/ProjectCard.tsx`: when `caseStudy` is present, render Problem → Approach → Result subsections instead of the plain description; other cards' layout untouched.
+    *   [X] Test `/portfolio` — expanded card renders correctly, other cards unaffected, responsive check.
+    *   [X] Merge into `staging`.
 
 *   [ ] **Wrap-up:** review `staging` locally; decide when to push/merge into `main`.
 
