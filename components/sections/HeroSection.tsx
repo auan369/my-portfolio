@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 // In a real app, you might share this type from your data file.
 interface OwnerData {
   nickname: string;
+  title: string;
   description: string;
   outcomes: string[];
 }
@@ -53,6 +54,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ owner }) => {
       >
         Hello, I&apos;m {owner.nickname}
       </motion.h1>
+
+      <motion.h2
+        variants={itemVariants}
+        className="text-xl md:text-2xl font-medium text-[#555] -mt-2 mb-2"
+      >
+        {owner.title}
+      </motion.h2>
 
       <motion.p
         variants={itemVariants}

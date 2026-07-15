@@ -1,6 +1,7 @@
 // pages/resume.tsx
 import type { NextPage } from 'next';
 import PageWrapper from '../components/layout/PageWrapper';
+import CTABanner from '../components/ui/CTABanner';
 import { portfolioData } from '../data/portfolioData';
 import { motion } from 'framer-motion';
 import React from 'react';
@@ -53,6 +54,7 @@ const HomePage: NextPage = () => {
                 Download PDF
             </a>
             </div>
+            <CTABanner heading="Want to discuss my experience?" subheading="Let's set up a conversation." />
       </PageWrapper>
     </motion.section>
     </>

@@ -6,6 +6,7 @@ import { portfolioData } from '../data/portfolioData';
 import BackgroundInfo from '../components/sections/about/BackgroundInfo';
 import TechSkills from '../components/sections/about/TechSkills';
 import PageWrapper from '../components/layout/PageWrapper';
+import CTABanner from '../components/ui/CTABanner';
 import SEO from '../components/SEO';
 import { PageMetadata } from '../components/SEO'; // Import the type
 
@@ -41,6 +42,7 @@ const AboutPage: NextPage = () => {
                 <BackgroundInfo about={portfolioData.about} />
                 <TechSkills technologies={portfolioData.technologies} />
             </div>
+            <CTABanner />
         </PageWrapper>
         
       </motion.section>

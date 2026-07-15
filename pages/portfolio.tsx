@@ -4,6 +4,7 @@ import { portfolioData } from '../data/portfolioData'; // Adjust path if needed
 import ProjectCard from '../components/ProjectCard'; // Your card component
 import Head from 'next/head';
 import PageWrapper from '../components/layout/PageWrapper';
+import CTABanner from '../components/ui/CTABanner';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import { PageMetadata } from '../components/SEO'; // Import the type
@@ -30,6 +31,7 @@ const PortfolioPage: NextPage = () => {
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
+          <CTABanner heading="Like what you see?" subheading="Let's talk about your next project." />
         </div>
       </PageWrapper>
     </motion.section>
