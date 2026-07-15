@@ -8,7 +8,7 @@ import SEO from '../components/SEO';
 import { PageMetadata } from '../components/SEO'; // Import the type
 
 const metadata: PageMetadata = {
-  title: `Full-Stack Engineer & AI Systems Architect | Loke Software`,
+  title: `Full-Stack Engineer & AI Systems Architect`,
   description: "Strategic technical partner for startups and enterprises. Specializing in AI-augmented development, AWS infrastructure, and high-performance web/mobile architecture.",
 };
 

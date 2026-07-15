@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://www.lokesoftware.com
+
+# Sitemaps
 Sitemap: https://www.lokesoftware.com/sitemap.xml

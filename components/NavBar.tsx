@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { FaHome, FaUser, FaProjectDiagram, FaFilePdf, FaEnvelope } from 'react-icons/fa';
 import { HiMenu, HiX } from 'react-icons/hi';
 import ProfilePic from '../public/images/profile.jpg'; // Import the image directly
+import { portfolioData } from '../data/portfolioData';
 
 const NavBar: React.FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -31,7 +32,7 @@ const NavBar: React.FC = () => {
                     height={48} // Provide actual height of the image
                     placeholder="blur"
                 />
-                <span className="text-xl font-bold text-white hidden sm:block">Kum Yew Loke</span>
+                <span className="text-xl font-bold text-white hidden sm:block">{portfolioData.owner.name}</span>
             </Link>
 
             {/* Desktop Menu */}

@@ -1,6 +1,6 @@
 // next-sitemap.config.js
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://kyloke-portfolio.vercel.app/',
+  siteUrl: 'https://www.lokesoftware.com',
   generateRobotsTxt: true, // (optional)
 };
