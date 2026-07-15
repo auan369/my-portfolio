@@ -148,6 +148,31 @@ Goal: turn portfolio visitors into client inquiries, without touching existing t
 
 ---
 
+### **Phase 6.1: Site Audit Findings (2026-07-16)**
+
+Full-site content/pages review requested after Phase 6 wrapped. Findings below, not yet actioned — decide per item whether to fix now or fold into Phase 7.
+
+**Concrete bugs (low-risk, high-value; can be fixed independent of the redesign):**
+
+*   [ ] `next-sitemap.config.js` — `siteUrl` is hardcoded to `https://kyloke-portfolio.vercel.app/` instead of the real domain. Every `npm run build` regenerates `sitemap.xml`/`robots.txt` pointing at the Vercel placeholder. Committed `public/robots.txt` currently has the correct URL by luck (manual edit) but is one build+commit away from being overwritten with the wrong domain.
+*   [ ] `pages/index.tsx` — homepage `<title>` metadata already includes `"| Loke Software"`, and `SEO.tsx` automatically appends `"| Kum Yew Loke (Loki)"` on top, producing a double-branded title (`"...| Loke Software | Kum Yew Loke (Loki)"`). Every other page avoids this; homepage title should drop the manual `"| Loke Software"` suffix.
+*   [ ] `data/portfolioData.tsx` — `owner.title` ("Full-Stack Engineer & AI Systems Architect") is defined but never rendered anywhere on-page, only used inside raw metadata strings. Consider surfacing it as a subtitle in `HeroSection.tsx`.
+*   [ ] `components/NavBar.tsx` — owner name is hardcoded as `"Kum Yew Loke"` instead of reading `portfolioData.owner.name`, breaking the single-source-of-truth content pattern.
+*   [ ] `public/index.html` — leftover CRA template file. Phase 1 tasklist marked "Delete the old public/index.html" as done, but the file is still present.
+
+**Content / conversion gaps:**
+
+*   [ ] Case study depth (`caseStudy` Problem/Approach/Result) only exists on 1 of 8 projects (Enterprise Event Registration Platform), by original Phase 6 design (scoped as a pilot). Consider extending to the other `featured: true` projects (Travel SaaS, Scientific Data App, AI Generation Platform).
+*   [ ] `/about`, `/portfolio`, and `/resume` are dead ends — only the homepage hero has a "Get in Touch" CTA. No obvious next step after reading case studies or the resume.
+*   [ ] About page's `openToWork` copy invites contact but is plain text, not a link/button.
+
+**Low-priority tech debt:**
+
+*   [ ] `package.json` — `react-router-dom` and `web-vitals` are still listed as dependencies; confirmed unused anywhere in the codebase (CRA leftovers), safe to remove.
+*   [ ] `package.json` — `eslint-config-next` pinned to `14.2.3` while `next` itself is `15.5.9`; version skew may mean stale lint rules.
+
+---
+
 ### **Phase 7: Visual Redesign (after Phase 6)**
 
 Goal: move away from the current "cookie-cutter AI app" feel. Reference sites: benscott.dev, prashantsani.com — both break the generic hero → feature-cards → footer template rhythm in favor of a more personal/editorial layout with custom scroll-driven motion (e.g. GSAP-style animation) and distinct typographic personality.
