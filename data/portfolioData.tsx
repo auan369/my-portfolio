@@ -26,6 +26,11 @@ export interface PortfolioItem {
   category: string;
   status: string;
   featured: boolean;
+  caseStudy?: {
+    problem: string;
+    approach: string;
+    result: string;
+  };
 }
 
 export interface Testimonial {
@@ -86,7 +91,12 @@ export const portfolioData: PortfolioData = {
       links: [{ label: 'System Architecture', icon: <FaDatabase/>, url: '' }],
       category: 'Full Stack',
       status: 'Completed',
-      featured: true
+      featured: true,
+      caseStudy: {
+        problem: "PLACEHOLDER: The client needed to run large-scale enterprise events with zero tolerance for downtime, but had no existing platform capable of handling offline registration, on-site merchandise customization, or multi-tenant event configuration.",
+        approach: "PLACEHOLDER: Architected a greenfield multi-tenant SaaS platform with cross-platform Windows and Mac desktop applications, backed by local MySQL persistence for 100% offline reliability, plus a custom web-to-hardware bridge connecting mobile devices to industrial UV printing kiosks in real time.",
+        result: "PLACEHOLDER: Delivered a production-ready system that ran flawlessly across multiple live enterprise events, with zero registration downtime and real-time merchandise customization on-site."
+      }
     },
     {
       id: 2,

@@ -29,7 +29,7 @@ const PhoneFrame: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 // --- The Main ProjectCard Component ---
 
 const ProjectCard: React.FC<{ project: ProjectCardProps }> = ({ project }) => {
-  const { title, description, techStack, image, links, device } = project;
+  const { title, description, techStack, image, links, device, caseStudy } = project;
   const deviceImageBaseClasses = "w-full h-full object-cover rounded-md";
 
   return (
@@ -65,10 +65,27 @@ const ProjectCard: React.FC<{ project: ProjectCardProps }> = ({ project }) => {
       {/* Details Section */}
       <div className="w-full lg:w-1/2 p-6 md:p-10 flex flex-col justify-center">
         <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a]">{title}</h2>
-        <p className="my-5 text-gray-600 leading-relaxed text-sm md:text-base">
-          {description}
-        </p>
-        
+        {caseStudy ? (
+          <div className="my-5 space-y-4">
+            <div>
+              <h4 className="text-[#888] text-xs uppercase tracking-widest mb-1 font-bold text-center lg:text-left">Problem</h4>
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">{caseStudy.problem}</p>
+            </div>
+            <div>
+              <h4 className="text-[#888] text-xs uppercase tracking-widest mb-1 font-bold text-center lg:text-left">Approach</h4>
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">{caseStudy.approach}</p>
+            </div>
+            <div>
+              <h4 className="text-[#888] text-xs uppercase tracking-widest mb-1 font-bold text-center lg:text-left">Result</h4>
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">{caseStudy.result}</p>
+            </div>
+          </div>
+        ) : (
+          <p className="my-5 text-gray-600 leading-relaxed text-sm md:text-base">
+            {description}
+          </p>
+        )}
+
         <div className="mb-6">
           <h4 className="text-[#888] text-xs uppercase tracking-widest mb-3 font-bold text-center lg:text-left">Tech Stack</h4>
           <ul className="flex flex-wrap justify-center lg:justify-start gap-2">
