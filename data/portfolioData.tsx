@@ -91,7 +91,7 @@ export const portfolioData: PortfolioData = {
       id: 1,
       title: "Enterprise Event Registration Platform | Systems Architect",
       description: "Architected an 'Ultimate Hybrid' event registration platform — a single installable desktop app that switches between a fully offline local-network mode (SQLite-backed, for maximum reliability) and an online Supabase-backed cloud mode. Deployed live at the AI Engineer Event to check in 400+ attendees across two days with QR scanning and instant PDF badge printing, backed by a secure admin console for real-time attendee management, per-event configuration (search logic, QR toggles, PDPA privacy modes), and a drag-and-drop visual badge editor.",
-      techStack: ['React', 'Electron', 'Node.js', 'Supabase (PostgreSQL/RLS)', 'SQLite'],
+      techStack: ['React', 'Electron', 'Node.js', 'Supabase (PostgreSQL/RLS)', 'SQLite', 'QR Code Scanning', 'PDF Generation', 'Excel/CSV Import'],
       image: eventRegImage,
       device: 'laptop',
       links: [{ label: 'System Architecture', icon: <FaDatabase/>, url: '' }],
@@ -108,7 +108,7 @@ export const portfolioData: PortfolioData = {
       id: 8,
       title: "Interactive UV Print Experience Platform | Full-Stack Developer",
       description: "Architected a cloud-hosted 'design-to-print' kiosk platform, letting event attendees design custom merchandise — mugs, phone cases, bottles — on tablet-mounted kiosks using a touch-friendly canvas editor, with a scan-to-upload mobile bridge for uploading personal photos without logging in. A background sync agent on the production PC automatically pulls finished, CMYK-ready designs from the cloud and feeds them straight into the UV printer's RIP software, while event staff manage events, assets, and templates through an integrated admin dashboard.",
-      techStack: ['Next.js', 'Supabase', 'Vercel', 'Node.js'],
+      techStack: ['Next.js', 'Supabase', 'Vercel', 'Node.js', 'Canvas API', 'QR Code Generation'],
       image: uvPrintStationImage,
       device: 'laptop',
       links: [{ label: 'Print Platform Architecture', icon: <FaDatabase/>, url: '' }],
@@ -133,8 +133,8 @@ export const portfolioData: PortfolioData = {
       status: 'Completed',
       featured: true,
       caseStudy: {
-        problem: "The original mobile-only encyclopedia had no way for the research team to manage growing species data, or for users to save their own sightings.",
-        approach: "Built a Next.js/Supabase web command center for data management (media compression, self-healing CSV import), then shipped mobile auth and a sightings engine with lazy-auth, RLS, and sighting-first storage.",
+        problem: "The client had built up their own collection of bird species data with no way to browse it on the go, and no easy way to keep it updated.",
+        approach: "Started with an offline-first React Native app to bring the collection to mobile, then a Next.js/Supabase web platform for uploading and editing species data (media compression, self-healing CSV import), and finally a sightings engine — lazy-auth to keep browsing public, Row Level Security for private data, and sighting-first storage so one sighting can belong to multiple lists without duplication.",
         result: "A full-stack platform spanning mobile, web, and cloud — with no-code data management and privacy-protected personal sightings at low storage cost."
       }
     },
