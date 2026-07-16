@@ -116,7 +116,7 @@ export const portfolioData: PortfolioData = {
       status: 'Pending Sign-Off',
       featured: true,
       caseStudy: {
-        problem: "The client's original single-machine UV printing kiosk couldn't scale beyond one venue at a time.",
+        problem: "The client's original UV printing workflow required many repeated manual actions from the admin/operator, preventing it from scaling to support custom designs for event attendees.",
         approach: "Built a cloud-hosted kiosk web app with a touch-friendly design editor and a scan-to-upload mobile bridge, plus a background sync agent that auto-feeds finished designs into the UV printer's RIP software.",
         result: "A hardware-agnostic, multi-event platform running the same design experience across concurrent events on any tablet, with no manual file handling."
       }
