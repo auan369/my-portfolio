@@ -90,7 +90,7 @@ export const portfolioData: PortfolioData = {
     {
       id: 1,
       title: "Enterprise Event Registration Platform | Systems Architect",
-      description: "Architected Hexlabs' 'Ultimate Hybrid' event registration platform — a single installable desktop app that switches between a fully offline local-network mode (SQLite-backed, for maximum reliability) and an online Supabase-backed cloud mode. Deployed live at the AI Engineer Event to check in 400+ attendees across two days with QR scanning and instant PDF badge printing, backed by a secure admin console for real-time attendee management, per-event configuration (search logic, QR toggles, PDPA privacy modes), and a drag-and-drop visual badge editor.",
+      description: "Architected an 'Ultimate Hybrid' event registration platform — a single installable desktop app that switches between a fully offline local-network mode (SQLite-backed, for maximum reliability) and an online Supabase-backed cloud mode. Deployed live at the AI Engineer Event to check in 400+ attendees across two days with QR scanning and instant PDF badge printing, backed by a secure admin console for real-time attendee management, per-event configuration (search logic, QR toggles, PDPA privacy modes), and a drag-and-drop visual badge editor.",
       techStack: ['React', 'Electron', 'Node.js', 'Supabase (PostgreSQL/RLS)', 'SQLite'],
       image: eventRegImage,
       device: 'laptop',
@@ -99,15 +99,32 @@ export const portfolioData: PortfolioData = {
       status: 'Completed',
       featured: true,
       caseStudy: {
-        problem: "Hexlabs needed to check in 400+ attendees across a two-day event — offline-reliable, zero downtime, with staff able to fix issues on the fly.",
+        problem: "The client needed to check in 400+ attendees across a two-day event — offline-reliable, zero downtime, with staff able to fix issues on the fly.",
         approach: "Built an installable desktop app switching between offline (SQLite) and online (Supabase) modes, with QR scanning, instant PDF badge printing, and an admin console for per-event configuration and a drag-and-drop badge editor.",
         result: "Ran registration for 400+ attendees across both event days with zero downtime and a self-serve admin console for staff."
       }
     },
     {
+      id: 8,
+      title: "Interactive UV Print Experience Platform | Full-Stack Developer",
+      description: "Architected a cloud-hosted 'design-to-print' kiosk platform, letting event attendees design custom merchandise — mugs, phone cases, bottles — on tablet-mounted kiosks using a touch-friendly canvas editor, with a scan-to-upload mobile bridge for uploading personal photos without logging in. A background sync agent on the production PC automatically pulls finished, CMYK-ready designs from the cloud and feeds them straight into the UV printer's RIP software, while event staff manage events, assets, and templates through an integrated admin dashboard.",
+      techStack: ['Next.js', 'Supabase', 'Vercel', 'Node.js'],
+      image: uvPrintStationImage,
+      device: 'laptop',
+      links: [{ label: 'Print Platform Architecture', icon: <FaDatabase/>, url: '' }],
+      category: 'Full Stack',
+      status: 'Pending Sign-Off',
+      featured: true,
+      caseStudy: {
+        problem: "The client's original single-machine UV printing kiosk couldn't scale beyond one venue at a time.",
+        approach: "Built a cloud-hosted kiosk web app with a touch-friendly design editor and a scan-to-upload mobile bridge, plus a background sync agent that auto-feeds finished designs into the UV printer's RIP software.",
+        result: "A hardware-agnostic, multi-event platform running the same design experience across concurrent events on any tablet, with no manual file handling."
+      }
+    },
+    {
       id: 2,
-      title: "TJIRP Birding Platform | Mobile & Web Systems Architect",
-      description: "Expanded TJIRP — a React Native birding encyclopedia app — into a full-stack platform. Shipped a Next.js/Supabase web command center for the research team to manage species data, including a drag-and-drop media pipeline with automatic compression/format conversion and a self-healing CSV importer, then followed with a Phase 3 mobile release adding secure user accounts and a personal sightings engine — letting users log GPS-tagged sightings with photos, organize them into custom lists, and export their data — while an automated image pipeline and sighting-first architecture kept cloud storage costs low.",
+      title: "Birding Data Platform | Mobile & Web Systems Architect",
+      description: "Expanded a React Native birding encyclopedia app into a full-stack platform. Shipped a Next.js/Supabase web command center for the research team to manage species data, including a drag-and-drop media pipeline with automatic compression/format conversion and a self-healing CSV importer, then followed with a Phase 3 mobile release adding secure user accounts and a personal sightings engine — letting users log GPS-tagged sightings with photos, organize them into custom lists, and export their data — while an automated image pipeline and sighting-first architecture kept cloud storage costs low.",
       techStack: ['React Native (Expo)', 'Next.js', 'WatermelonDB', 'SQLite', 'Supabase (Auth/Storage/RLS)', 'TypeScript'],
       image: birdAppImage,
       device: 'phone',
@@ -116,7 +133,7 @@ export const portfolioData: PortfolioData = {
       status: 'Completed',
       featured: true,
       caseStudy: {
-        problem: "TJIRP's mobile-only encyclopedia had no way for the research team to manage growing species data, or for users to save their own sightings.",
+        problem: "The original mobile-only encyclopedia had no way for the research team to manage growing species data, or for users to save their own sightings.",
         approach: "Built a Next.js/Supabase web command center for data management (media compression, self-healing CSV import), then shipped mobile auth and a sightings engine with lazy-auth, RLS, and sighting-first storage.",
         result: "A full-stack platform spanning mobile, web, and cloud — with no-code data management and privacy-protected personal sightings at low storage cost."
       }
@@ -194,23 +211,6 @@ export const portfolioData: PortfolioData = {
       category: 'Research',
       status: 'Published',
       featured: false
-    },
-    {
-      id: 8,
-      title: "Hex Interactive UV Print Station | Full-Stack Developer",
-      description: "Architected a cloud-hosted 'design-to-print' kiosk platform for Hexlabs, letting event attendees design custom merchandise — mugs, phone cases, bottles — on tablet-mounted kiosks using a touch-friendly canvas editor, with a scan-to-upload mobile bridge for uploading personal photos without logging in. A background sync agent on the production PC automatically pulls finished, CMYK-ready designs from the cloud and feeds them straight into the UV printer's RIP software, while Hexlab staff manage events, assets, and templates through an integrated admin dashboard.",
-      techStack: ['Next.js', 'Supabase', 'Vercel', 'Node.js'],
-      image: uvPrintStationImage,
-      device: 'laptop',
-      links: [{ label: 'Print Platform Architecture', icon: <FaDatabase/>, url: '' }],
-      category: 'Full Stack',
-      status: 'Pending Sign-Off',
-      featured: true,
-      caseStudy: {
-        problem: "Hexlabs' original single-machine UV printing kiosk couldn't scale beyond one venue at a time.",
-        approach: "Built a cloud-hosted kiosk web app with a touch-friendly design editor and a scan-to-upload mobile bridge, plus a background sync agent that auto-feeds finished designs into the UV printer's RIP software.",
-        result: "A hardware-agnostic, multi-event platform running the same design experience across concurrent events on any tablet, with no manual file handling."
-      }
     }
   ],
 
