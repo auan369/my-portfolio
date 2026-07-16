@@ -91,7 +91,7 @@ export const portfolioData: PortfolioData = {
       id: 1,
       title: "Enterprise Event Registration Platform | Systems Architect",
       description: "Architected an 'Ultimate Hybrid' event registration platform — a single installable desktop app that switches between a fully offline local-network mode (SQLite-backed, for maximum reliability) and an online Supabase-backed cloud mode. Deployed live at the AI Engineer Event to check in 400+ attendees across two days with QR scanning and instant PDF badge printing, backed by a secure admin console for real-time attendee management, per-event configuration (search logic, QR toggles, PDPA privacy modes), and a drag-and-drop visual badge editor.",
-      techStack: ['React', 'Electron', 'Node.js', 'Supabase (PostgreSQL/RLS)', 'SQLite', 'QR Code Scanning', 'PDF Generation', 'Excel/CSV Import'],
+      techStack: ['React', 'Electron', 'Node.js', 'Supabase (PostgreSQL/RLS)', 'SQLite', 'Local API / WebSocket', 'Supabase Realtime', 'Print Driver & Hardware Integration'],
       image: eventRegImage,
       device: 'laptop',
       links: [{ label: 'System Architecture', icon: <FaDatabase/>, url: '' }],
