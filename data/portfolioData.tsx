@@ -108,7 +108,7 @@ export const portfolioData: PortfolioData = {
       id: 8,
       title: "Interactive UV Print Experience Platform | Full-Stack Developer",
       description: "Architected a cloud-hosted 'design-to-print' kiosk platform, letting event attendees design custom merchandise — mugs, phone cases, bottles — on tablet-mounted kiosks using a touch-friendly canvas editor, with a scan-to-upload mobile bridge for uploading personal photos without logging in. A background sync agent on the production PC automatically pulls finished, CMYK-ready designs from the cloud and feeds them straight into the UV printer's RIP software, while event staff manage events, assets, and templates through an integrated admin dashboard.",
-      techStack: ['Next.js', 'Supabase', 'Vercel', 'Node.js', 'Canvas API', 'QR Code Generation'],
+      techStack: ['Next.js', 'Supabase (Auth, Realtime, PostgreSQL/RLS)', 'Vercel', 'Node.js', 'Canvas API', 'Local Print Daemon', 'RIP Software Integration', 'Session-Based Asset Isolation'],
       image: uvPrintStationImage,
       device: 'laptop',
       links: [{ label: 'Print Platform Architecture', icon: <FaDatabase/>, url: '' }],
