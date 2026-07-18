@@ -206,7 +206,7 @@ Goal: bring three portfolio entries up to date with real project details supplie
 
 ---
 
-### **Phase 7: Visual Redesign (after Phase 6)**
+### **Phase 7: Visual Redesign (after Phase 6)** — IMPLEMENTED 2026-07-18
 
 Goal: move away from the current "cookie-cutter AI app" feel. Reference sites: benscott.dev, prashantsani.com — both break the generic hero → feature-cards → footer template rhythm in favor of a more personal/editorial layout with custom scroll-driven motion (e.g. GSAP-style animation) and distinct typographic personality.
 
@@ -215,9 +215,22 @@ Priorities called out 2026-07-15, roughly in order:
 2.  Lack of motion/personality — site feels static; wants scroll animation, transitions, more character in interactions.
 3.  Mobile optimization — current layout isn't well optimized for mobile.
 
-Sequencing: deliberately deferred until Phase 6 (`feature/hero-cta`, `feature/testimonials`, `feature/contact-scheduling` [skipped], `feature/case-study-depth`) is merged into `staging`, so the new conversion-focused content/sections exist before the layout around them is reworked.
+**Research (2026-07-18):** benscott.dev turned out to be a generic template itself, not a useful structural reference. prashantsani.com (Awwwards-featured, documented build) was the useful one: GSAP+ScrollMagic scroll-triggered reveals *without* hijacking the scrollbar, one signature interactive hero piece rather than scattered small animations, a deliberate dark/flat theme, fluid `clamp()`-style type, and motion explicitly simplified (not just scaled down) on mobile. Translated to our stack: reused Framer Motion (already a dependency) instead of adding GSAP.
 
-*   [ ] Revisit reference sites for concrete direction (typography, color, motion library choice) once Phase 6 is done.
-*   [ ] Scope which pages/sections are in play (homepage hero, portfolio grid, about, nav) vs. left alone.
-*   [ ] Decide on animation approach (Framer Motion is already a dependency via `_app.tsx` page transitions — likely reuse rather than add GSAP).
-*   [ ] Mobile-first pass on whichever layout is chosen.
+**Direction chosen:** built a palette/motif comparison artifact with 3 options using real hero content (a cursor-reactive node-network canvas as the "signature motif," tested against 3 palettes). User picked **Option C — Terminal Phosphor**: near-black charcoal ground, full monospace typography, soft phosphor-green accent, single-theme commitment (no light/dark pair).
+
+*   [X] Revisit reference sites for concrete direction — done via a research fork (see above).
+*   [X] Scope which pages/sections are in play — all of them: homepage hero, nav, footer, every page (about/portfolio/resume/contact), and all shared components (ProjectCard, Testimonials, CTABanner, SkillPill, Socials, ContactForm).
+*   [X] Decide on animation approach — Framer Motion, no new dependency added.
+*   [X] Mobile-first pass — see below.
+
+**Implementation (branch `feature/phase7-terminal-theme`, merged into `staging`):**
+
+*   [X] **Foundation:** `next/font/google` JetBrains Mono loaded site-wide via `pages/_app.tsx`; Tailwind color tokens (`bg`/`surface`/`surface-raised`/`ink`/`muted`/`accent`/`accent-dim`/`border`) added in `tailwind.config.js`; base dark styles, selection color, blinking-caret utility, and a `prefers-reduced-motion` safety net added to `styles/globals.css`.
+*   [X] **`components/ui/NodeNetwork.tsx`** (new): Canvas-based cursor-reactive node network, the hero's signature motif. Disabled entirely on touch devices (`hover: none`/`pointer: coarse`) and when `prefers-reduced-motion` is set.
+*   [X] **`HeroSection.tsx`** rewritten: two-column asymmetric layout (left-aligned pitch + a terminal-window "output" card echoing the same info as shell commands: `$ whoami`, `$ cat capabilities.txt`) instead of the old centered single-column block — directly breaks the "everything centered" template rhythm. Terminal card hidden below `lg`; mobile `min-height` reduced so the hero hugs its content instead of leaving dead space once the card disappears.
+*   [X] **`NavBar.tsx` / `Footer.tsx`**: nav links restyled as `~/path`-style labels; footer copy becomes a literal `$ echo "..."` shell command.
+*   [X] **Shared components** (`Testimonials`, `CTABanner`, `ProjectCard`, `SkillPill`, `Socials`, `ContactForm`, `BackgroundInfo`, `TechSkills`): moved to the new tokens/type; `Testimonials` and `ProjectCard` gained staggered `whileInView` scroll reveals they previously lacked; section labels use `// comment`-style headers.
+*   [X] **Pages** (`about`, `portfolio`, `resume`, `contact`): each header uses a page-specific shell-command eyebrow (`$ cat about.md`, `$ ls ./projects`, `$ cat resume.pdf`, `$ ./contact --new-inquiry`) so pages don't all repeat the same centered-h1 block.
+*   [X] **Mobile-first pass:** verified no horizontal overflow on any page at 390px width; fixed a real dead-space gap in the mobile hero (terminal card is `lg`-only, so `min-h` needed to shrink on mobile too); confirmed `NodeNetwork` correctly disables on touch devices.
+*   [X] **QA:** `npx tsc --noEmit`, `npm run lint` (had to fix a `jsx-no-comment-textnodes` false-positive from `// problem`-style labels — wrapped in `{'...'}`), full `npm run build`, and a production-mode (`npm run start`) smoke test all pass clean. Two apparent bugs during screenshot QA (blacked-out images, invisible below-the-fold cards, a "floating" nav) were confirmed to be Playwright full-page-screenshot artifacts (lazy-loaded `next/image`, `whileInView` not firing for off-screen elements, `position: fixed` compositing) — not real issues; verified with scrolled/viewport-only screenshots.
