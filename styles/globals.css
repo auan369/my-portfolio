@@ -4,4 +4,39 @@
 @tailwind components;
 @tailwind utilities;
 
-/* You can add any other custom global styles here if you have them */
+html {
+  background-color: #0c0f0d;
+}
+
+body {
+  background-color: #0c0f0d;
+  color: #e8f5ec;
+}
+
+::selection {
+  background-color: #5fcb93;
+  color: #0c0f0d;
+}
+
+/* Terminal-style blinking caret, used sparingly for hero personality */
+@keyframes caret-blink {
+  0%, 45% { opacity: 1; }
+  46%, 100% { opacity: 0; }
+}
+.caret {
+  display: inline-block;
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caret {
+    animation: none;
+    opacity: 1;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
