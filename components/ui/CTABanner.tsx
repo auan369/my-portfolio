@@ -13,13 +13,13 @@ const CTABanner: React.FC<CTABannerProps> = ({
 }) => {
   return (
     <div className="mt-16 text-center">
-      <h3 className="text-2xl font-semibold text-[#2d2d2d] mb-2">{heading}</h3>
-      <p className="text-[#555] mb-6">{subheading}</p>
+      <h3 className="text-2xl font-semibold text-ink mb-2">{heading}</h3>
+      <p className="text-muted mb-6">{subheading}</p>
       <Link
         href="/contact"
-        className="inline-block bg-[#333] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#444] transition-colors duration-300"
+        className="inline-block bg-accent text-bg font-bold py-3 px-6 rounded hover:bg-accent-dim transition-colors duration-300"
       >
-        Get in Touch
+        [ Get in Touch ]
       </Link>
     </div>
   );

@@ -47,7 +47,7 @@ const ContactForm: React.FC = () => {
   return (
     <motion.form
       onSubmit={handleSubmit}
-      className="w-full max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md"
+      className="w-full max-w-2xl mx-auto bg-surface p-8 rounded-lg border border-border"
       // You can add animations to the form itself
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -65,8 +65,8 @@ const ContactForm: React.FC = () => {
         />
       </div>
       <div className="mb-6">
-        <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
-          Your Name
+        <label htmlFor="name" className="block text-accent text-sm font-bold mb-2">
+          $ your_name
         </label>
         <input
           type="text"
@@ -75,12 +75,12 @@ const ContactForm: React.FC = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-[#333]"
+          className="appearance-none border border-border bg-surface-raised rounded w-full py-3 px-4 text-ink leading-tight focus:outline-none focus:ring-2 focus:ring-accent"
         />
       </div>
       <div className="mb-6">
-        <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
-          Your Email
+        <label htmlFor="email" className="block text-accent text-sm font-bold mb-2">
+          $ your_email
         </label>
         <input
           type="email"
@@ -89,12 +89,12 @@ const ContactForm: React.FC = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-[#333]"
+          className="appearance-none border border-border bg-surface-raised rounded w-full py-3 px-4 text-ink leading-tight focus:outline-none focus:ring-2 focus:ring-accent"
         />
       </div>
       <div className="mb-6">
-        <label htmlFor="message" className="block text-gray-700 text-sm font-bold mb-2">
-          Message
+        <label htmlFor="message" className="block text-accent text-sm font-bold mb-2">
+          $ message
         </label>
         <textarea
           id="message"
@@ -103,16 +103,16 @@ const ContactForm: React.FC = () => {
           onChange={(e) => setMessage(e.target.value)}
           rows={5}
           required
-          className="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-[#333]"
+          className="appearance-none border border-border bg-surface-raised rounded w-full py-3 px-4 text-ink leading-tight focus:outline-none focus:ring-2 focus:ring-accent"
         />
       </div>
       <div className="flex items-center justify-center">
         <button
           type="submit"
           disabled={status === "sending"}
-          className="bg-[#333] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#444] focus:outline-none focus:shadow-outline transition-colors duration-300"
+          className="bg-accent text-bg font-bold py-3 px-6 rounded hover:bg-accent-dim focus:outline-none transition-colors duration-300"
         >
-          Send Message
+          [ Send Message ]
           {status === "sending" && (
             <span className="ml-2">
               <FaSpinner className="animate-spin" />

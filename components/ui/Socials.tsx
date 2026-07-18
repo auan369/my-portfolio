@@ -23,7 +23,7 @@ const Socials: React.FC<SocialsProps> = ({ links }) => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={link.label} // Important for accessibility
-          className="text-4xl sm:text-5xl text-[#333] p-4 rounded-full hover:bg-[#333] hover:text-white hover:scale-110 transform transition-all duration-300"
+          className="text-3xl sm:text-4xl text-ink p-4 rounded-full border border-border hover:bg-accent hover:text-bg hover:border-accent hover:scale-110 transform transition-all duration-300"
         >
           {link.icon}
         </a>

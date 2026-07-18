@@ -1,6 +1,7 @@
 // components/ProjectCard.tsx
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { PortfolioItem } from '../data/portfolioData';
 
 // The main props interface for our ProjectCard component
@@ -28,15 +29,26 @@ const PhoneFrame: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 
 // --- The Main ProjectCard Component ---
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 const ProjectCard: React.FC<{ project: ProjectCardProps }> = ({ project }) => {
   const { title, description, techStack, image, links, device, caseStudy } = project;
   const deviceImageBaseClasses = "w-full h-full object-cover rounded-md";
 
   return (
-    <div className="flex flex-col lg:flex-row w-full my-8 bg-[#f9f9f9] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-      
+    <motion.div
+      className="flex flex-col lg:flex-row w-full my-8 bg-surface rounded-lg overflow-hidden border border-border hover:border-accent-dim transition-colors duration-300"
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.15 }}
+    >
+
       {/* Image Section */}
-      <div className="w-full lg:w-1/2 min-h-[20rem] md:min-h-[30rem] flex justify-center items-center p-6 md:p-12 bg-gray-200">
+      <div className="w-full lg:w-1/2 min-h-[20rem] md:min-h-[30rem] flex justify-center items-center p-6 md:p-12 bg-surface-raised">
         {device === 'laptop' && (
           <LaptopFrame>
             <Image
@@ -64,33 +76,33 @@ const ProjectCard: React.FC<{ project: ProjectCardProps }> = ({ project }) => {
 
       {/* Details Section */}
       <div className="w-full lg:w-1/2 p-6 md:p-10 flex flex-col justify-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a]">{title}</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-ink">{title}</h2>
         {caseStudy ? (
           <div className="my-5 space-y-4">
             <div>
-              <h4 className="text-[#888] text-xs uppercase tracking-widest mb-1 font-bold text-center lg:text-left">Problem</h4>
-              <p className="text-gray-600 leading-relaxed text-sm md:text-base">{caseStudy.problem}</p>
+              <h4 className="text-accent text-xs uppercase tracking-widest mb-1 font-bold text-center lg:text-left">{'// problem'}</h4>
+              <p className="text-muted leading-relaxed text-sm md:text-base">{caseStudy.problem}</p>
             </div>
             <div>
-              <h4 className="text-[#888] text-xs uppercase tracking-widest mb-1 font-bold text-center lg:text-left">Approach</h4>
-              <p className="text-gray-600 leading-relaxed text-sm md:text-base">{caseStudy.approach}</p>
+              <h4 className="text-accent text-xs uppercase tracking-widest mb-1 font-bold text-center lg:text-left">{'// approach'}</h4>
+              <p className="text-muted leading-relaxed text-sm md:text-base">{caseStudy.approach}</p>
             </div>
             <div>
-              <h4 className="text-[#888] text-xs uppercase tracking-widest mb-1 font-bold text-center lg:text-left">Result</h4>
-              <p className="text-gray-600 leading-relaxed text-sm md:text-base">{caseStudy.result}</p>
+              <h4 className="text-accent text-xs uppercase tracking-widest mb-1 font-bold text-center lg:text-left">{'// result'}</h4>
+              <p className="text-muted leading-relaxed text-sm md:text-base">{caseStudy.result}</p>
             </div>
           </div>
         ) : (
-          <p className="my-5 text-gray-600 leading-relaxed text-sm md:text-base">
+          <p className="my-5 text-muted leading-relaxed text-sm md:text-base">
             {description}
           </p>
         )}
 
         <div className="mb-6">
-          <h4 className="text-[#888] text-xs uppercase tracking-widest mb-3 font-bold text-center lg:text-left">Tech Stack</h4>
+          <h4 className="text-accent text-xs uppercase tracking-widest mb-3 font-bold text-center lg:text-left">{'// tech stack'}</h4>
           <ul className="flex flex-wrap justify-center lg:justify-start gap-2">
             {techStack.map((tech) => (
-              <li key={tech} className="bg-white border border-gray-200 rounded-full px-3 py-1 text-xs font-medium text-gray-700 shadow-sm">
+              <li key={tech} className="bg-surface-raised border border-border rounded px-3 py-1 text-xs font-medium text-ink">
                 {tech}
               </li>
             ))}
@@ -102,21 +114,21 @@ const ProjectCard: React.FC<{ project: ProjectCardProps }> = ({ project }) => {
             const isDisabled = !link.url || link.url === "" || link.url === "#";
             return isDisabled ? (
               /* Disabled Version */
-              <div 
-                key={link.label} 
-                className="bg-[#333] text-white border border-[#333] rounded-lg px-3 py-2 text-sm font-bold flex items-center gap-2 cursor-not-allowed opacity-60"
+              <div
+                key={link.label}
+                className="bg-surface-raised text-muted border border-border rounded px-3 py-2 text-sm font-bold flex items-center gap-2 cursor-not-allowed"
                 title="Private Project / NDA"
               >
                 {link.icon}
                 {link.label}
               </div>
             ) : (
-              <a 
-                key={link.label} 
-                href={link.url} 
-                target="_blank" 
+              <a
+                key={link.label}
+                href={link.url}
+                target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#444] text-white rounded-lg px-3 py-2 text-sm font-bold no-underline hover:bg-[#333] transition-colors duration-300"
+                className="bg-accent text-bg rounded px-3 py-2 text-sm font-bold no-underline hover:bg-accent-dim transition-colors duration-300"
               >
                 <span className="flex items-center gap-2">
                   {link.icon}
@@ -127,7 +139,7 @@ const ProjectCard: React.FC<{ project: ProjectCardProps }> = ({ project }) => {
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

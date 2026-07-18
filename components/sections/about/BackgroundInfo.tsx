@@ -11,10 +11,10 @@ interface AboutInfo {
 const BackgroundInfo: React.FC<{ about: AboutInfo }> = ({ about }) => {
   return (
     <div className="w-full space-y-4">
-      <h4 className="text-2xl font-medium text-[#4b4b4b] border-b-2 border-gray-300 pb-2">Background</h4>
-      <p className="text-lg text-justify text-[#555]">{about.background}</p>
-      <p className="text-lg text-justify text-[#555]">{about.skills}</p>
-      <p className="text-lg text-justify text-[#555]">{about.openToWork}</p>
+      <h4 className="text-xs uppercase tracking-widest text-accent border-b border-border pb-2">{'// background'}</h4>
+      <p className="text-base leading-relaxed text-muted">{about.background}</p>
+      <p className="text-base leading-relaxed text-muted">{about.skills}</p>
+      <p className="text-base leading-relaxed text-muted">{about.openToWork}</p>
     </div>
   );
 };
