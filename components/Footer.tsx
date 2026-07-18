@@ -10,10 +10,9 @@ const Footer: React.FC<FooterProps> = ({ ownerName }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    // All styles from `.footer` are now here
-    <footer className="w-full bg-[#333] text-white text-center py-4">
-        <p className="text-sm">
-            Designed and Developed by {ownerName}. © {currentYear}
+    <footer className="w-full bg-bg text-muted text-center py-6 border-t border-border">
+        <p className="text-xs">
+            <span className="text-accent">$</span> echo &quot;Designed and Developed by {ownerName}. © {currentYear}&quot;
         </p>
     </footer>
   );
