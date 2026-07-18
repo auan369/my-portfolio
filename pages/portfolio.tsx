@@ -2,7 +2,6 @@
 import type { NextPage } from 'next';
 import { portfolioData } from '../data/portfolioData'; // Adjust path if needed
 import ProjectCard from '../components/ProjectCard'; // Your card component
-import Head from 'next/head';
 import PageWrapper from '../components/layout/PageWrapper';
 import CTABanner from '../components/ui/CTABanner';
 import { motion } from 'framer-motion';
@@ -16,17 +15,26 @@ const metadata: PageMetadata = {
 
 const PortfolioPage: NextPage = () => {
   return (
-    <motion.section 
+    <section
         id="portfolio"
-        className="w-full min-h-screen flex flex-col items-center py-20 px-5 text-[#333] font-sans"
+        className="w-full min-h-screen flex flex-col items-center py-28 px-5 bg-bg text-ink"
     >
-      
+
       <SEO metadata={metadata} />
-      
+
       <PageWrapper>
         <div className="w-full max-w-6xl">
-          <h1 className="text-4xl font-semibold text-[#2d2d2d] mb-8 text-center">Projects</h1>
-          <div className="flex flex-col gap-12"> 
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5 }}
+            className="mb-10"
+          >
+            <span className="text-xs text-accent">$ ls ./projects</span>
+            <h1 className="text-3xl md:text-4xl font-semibold text-ink mt-2">Projects</h1>
+          </motion.div>
+          <div className="flex flex-col gap-12">
             {portfolioData.projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
@@ -34,7 +42,7 @@ const PortfolioPage: NextPage = () => {
           <CTABanner heading="Like what you see?" subheading="Let's talk about your next project." />
         </div>
       </PageWrapper>
-    </motion.section>
+    </section>
   );
 };
 

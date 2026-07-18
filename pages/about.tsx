@@ -1,6 +1,5 @@
 // pages/about.tsx
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 import BackgroundInfo from '../components/sections/about/BackgroundInfo';
@@ -19,24 +18,29 @@ const AboutPage: NextPage = () => {
 
   return (
     <>
-      {/* <Head> */}
-        {/* <title>{portfolioData.owner.name} | About Me</title> */}
-        {/* <meta name="description" content={about.background} /> */}
       <SEO metadata={metadata} />
-      {/* </Head> */}
 
       <motion.section
         id="about"
-        className="w-full bg-[#e1e5ea] text-[#333] font-sans leading-relaxed py-20"
+        className="w-full bg-bg text-ink leading-relaxed py-28"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
       >
         <PageWrapper>
-            <h1 className="text-4xl font-semibold text-center text-[#2d2d2d] mb-8">
-            About Me
-            </h1>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.5 }}
+              className="mb-10"
+            >
+              <span className="text-xs text-accent">$ cat about.md</span>
+              <h1 className="text-3xl md:text-4xl font-semibold text-ink mt-2">
+                About Me
+              </h1>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 items-start">
                 <BackgroundInfo about={portfolioData.about} />
@@ -44,7 +48,7 @@ const AboutPage: NextPage = () => {
             </div>
             <CTABanner />
         </PageWrapper>
-        
+
       </motion.section>
     </>
   );

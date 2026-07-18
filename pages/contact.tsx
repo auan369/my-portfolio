@@ -1,6 +1,5 @@
 // pages/contact.tsx
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 import SEO from '../components/SEO';
@@ -19,7 +18,7 @@ const metadata: PageMetadata = {
 };
 
 const ContactPage: NextPage = () => {
-  const { owner, contact } = portfolioData;
+  const { contact } = portfolioData;
 
   // Create the social links array here, at the page level
   const socialLinks = [
@@ -31,34 +30,39 @@ const ContactPage: NextPage = () => {
 
   return (
     <>
-      {/* <Head> */}
-        {/* <title>Contact | {owner.name}</title> */}
-        {/* <meta name="description" content="Get in touch with me for project inquiries or to connect on social media." /> */}
-        <SEO metadata={metadata} />
-      {/* </Head> */}
+      <SEO metadata={metadata} />
 
       <motion.section
         id="contact"
-        className="w-full bg-[#f0f4f8] text-[#333] font-sans py-20"
+        className="w-full bg-bg text-ink py-28"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6 }}
       >
         <PageWrapper>
-          <h1 className="text-4xl font-semibold text-center text-[#2d2d2d] mb-4">
-            Get In Touch
-          </h1>
-          <p className="text-lg text-center text-[#555] max-w-2xl mx-auto mb-12">
-            Have a project in mind or just want to connect? Send me a message or find me on social media.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5 }}
+            className="mb-12 text-center"
+          >
+            <span className="text-xs text-accent">$ ./contact --new-inquiry</span>
+            <h1 className="text-3xl md:text-4xl font-semibold text-ink mt-2">
+              Get In Touch
+            </h1>
+            <p className="text-base text-muted max-w-2xl mx-auto mt-4">
+              Have a project in mind or just want to connect? Send me a message or find me on social media.
+            </p>
+          </motion.div>
 
           {/* Use the new ContactForm component */}
           <ContactForm />
 
           {/* Divider and title for the Socials section */}
           <div className="mt-20 text-center">
-            <h2 className="text-2xl font-semibold text-[#2d2d2d] mb-4">
+            <h2 className="text-xl font-semibold text-ink mb-4">
               Or Find Me Here
             </h2>
             {/* Use the new Socials component and pass the links as a prop */}
