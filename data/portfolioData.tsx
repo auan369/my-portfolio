@@ -12,7 +12,7 @@ import promptImage from '../public/images/prompt.jpg';
 import sg60Image from '../public/images/sg60magicball.gif';
 import icsrImage from '../public/images/ICSR.jpg';
 import cginstrumentsImage from '../public/images/cg.gif';
-import uvPrintStationImage from '../public/images/uvPrintStation.png';
+import uvPrintStationImage from '../public/images/uvPrintStation.jpg';
 // You should create/use abstract high-quality placeholders for the new "Consultancy" items
 import { StaticImageData } from 'next/image';
 
