@@ -36,7 +36,7 @@ const cardVariants = {
 
 const ProjectCard: React.FC<{ project: ProjectCardProps }> = ({ project }) => {
   const { title, description, techStack, image, links, device, caseStudy } = project;
-  const deviceImageBaseClasses = "w-full h-full object-cover rounded-md";
+  const deviceImageBaseClasses = "w-full h-full object-contain rounded-md";
 
   return (
     <motion.div
