@@ -144,7 +144,7 @@ Goal: turn portfolio visitors into client inquiries, without touching existing t
     *   [X] Test `/portfolio` — expanded card renders correctly, other cards unaffected, responsive check.
     *   [X] Merge into `staging`.
 
-*   [ ] **Wrap-up:** review `staging` locally; decide when to push/merge into `main`.
+*   [X] **Wrap-up:** reviewed `staging` locally (2026-07-16 through 2026-07-20, spanning Phase 6, 6.1, 6.2, and 7). Merging into `main` locally now; not pushed to `origin` yet — that's a separate decision.
 
 ---
 
