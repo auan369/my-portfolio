@@ -267,7 +267,7 @@ export const portfolioData: PortfolioData = {
     ],
     "AI-Augmented Development": [
       'Reasoning Chain Engineering',
-      'AI Code Generation (Cursor, Cline)',
+      'AI Code Generation (Claude Code, Cursor, Cline)',
       'LLM API Integration',
       'Forensic Codebase Stabilization'
     ]
